@@ -255,7 +255,7 @@
     </div>
   </section>
 
-  <!-- slider section  -->
+  <!-- popular dishes slider section  -->
   <section class="popular-dishes-section container" id="popular-dishes">
     <div class="popular-dishes">
       <div class="popular-dishes__content-container">
@@ -272,15 +272,11 @@
               </span>
             </div>
           </div>
-          <div class="row" id="slider_content"></div>
+          <div class="slider__content" id="slider_content"></div>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
 
   <!-- booking section  -->
   <section class="booking-section" id="booking">
@@ -387,15 +383,9 @@
     <p>All rights are reserved for Mercadito Restaurant © 2019</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
-
   <!-- build:js scripts/main.min.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
     let default_slider = 1;
@@ -403,56 +393,45 @@
     // Slider data
     const contents = {
       '1': {
-        'url': 'images/slide-1.jpg',
+        'url': 'images/slider/slide-1.webp',
         'title': 'Sweet and sour pork',
-        'description': 'Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the main material of this dish. The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate people appetite.',
+        'description': 'Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the main material of this dish. <br /> The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate people appetite.',
         'price': '36'
       },
       '2': {
-        'url': 'images/slide-2.jpg',
+        'url': 'images/slider/slider-2.webp',
         'title': 'Pork Wontons',
-        'description': 'There are no rules when it comes to dipping sauces for pork wontons. Go with what you like. I looooove pairing it with a gingery, vinegary based dipping sauce with a hint of sesame oil. ',
+        'description': 'There are no rules when it comes to dipping sauces for pork wontons. Go with what you like. <br /> I looooove pairing it with a gingery, vinegary based dipping sauce with a hint of sesame oil. ',
         'price': '54'
       },
       '3': {
-        'url': 'images/3.jpg',
+        'url': 'images/slider/slider-3.webp',
         'title': 'Sweet and sour pork',
-        'description': 'This savory pepper steak sauce has a combination of beef and chicken broth which adds depth of flavor. Soy sauce and hot sauce enhance the other flavors in the dish, and just a touch of hot sauce is used, which doesn"t make it spicy.',
+        'description': 'This savory pepper steak sauce has a combination of beef and chicken broth which adds depth of flavor. <br /> Soy sauce and hot sauce enhance the other flavors in the dish, and just a touch of hot sauce is used, which doesn"t make it spicy.',
         'price': '12'
       }
     };
-
-    // Show animation (fading)
-    const unFade = (id) => {
-      if (opacity <= 1) {
-        opacity = opacity + 0.1;
-        setTimeout(function () { unFade(id) }, 100);
-      }
-      document.getElementById(id).style.opacity = opacity;
-    }
 
     // Switch between slider datas
     const switchSlider = (page_number = 1) => {
       let data = contents[page_number];
       let result = `
-            <div class="col-md-8 col-lg-8 col-sm-12">
-                <img src="${data.url}" alt="image" width="100%">
+            <div class="slider__content-img">
+                <img src="${data.url}" alt="${data.title}">
             </div>
-            <div class="col-md-4 col-lg-4 col-sm-12">
-              <p>
+            <div class="slider__content-container">
+              <p class="slider__content-title">
                 ${data.title}
                 </p>
-                <p>
+                <p class="slider__content-description">
                     ${data.description}
                 </p>
-                <p>$${data.price}</p>
+                <p class="slider__content-price">$${data.price}</p>
             </div>
         `;
       let number = page_number + '/' + Object.keys(contents).length;
-      opacity = 0;
       document.getElementById('slider_content').innerHTML = result;
       document.getElementById('slider_number').innerHTML = number;
-      unFade('slider_content');
     }
     switchSlider();
 
@@ -473,6 +452,12 @@
       }
       switchSlider(default_slider);
     };
+
+
+
+    let activeSlide = document.querySelector("#slide_number");
+    let getActiveNum = activeSlide.innerText.split("/")[0];
+    console.log(getActiveNum);
   </script>
 </body>
 
