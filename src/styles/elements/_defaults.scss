@@ -1,14 +1,68 @@
+//  Reset styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 body,
 html {
   font-family: $lato;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: #000;
-  background: #fff;
+  color: #ffffff;
+  background: #000000;
 }
+
 .main {
   background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "RobotoSlab";
+}
+
+p {
+  font-family: "Catamaran";
+}
+
+//  Removes input type number arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//Removes AM/PM in input type data
+input::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+
+//  Default style for input placeholders
+::placeholder {
+  color: transparent;
+  font-family: "Catamaran";
+  font-size: 1rem;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
 }

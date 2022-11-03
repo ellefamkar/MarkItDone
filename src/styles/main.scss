@@ -1,23 +1,23 @@
 // TOOLS
-@import '../../node_modules/normalize.css/normalize';
-@import 'tools/_mq';
-@import 'tools/tools.aliases';
+@import "../../node_modules/normalize.css/normalize";
+@import "tools/_mq";
+@import "tools/tools.aliases";
 
 // SETTINGS
-@import 'settings/_settings.global';
-@import 'settings/_mq';
-@import 'settings/_fonts.scss';
+@import "settings/_settings.global";
+@import "settings/_mq";
+@import "settings/_fonts.scss";
 
 // ELEMENTS
-@import 'elements/_var.scss';
-@import 'elements/_ie.scss';
-@import 'elements/_defaults.scss';
-@import 'elements/_misc.scss';
+@import "elements/_var.scss";
+@import "elements/_ie.scss";
+@import "elements/_defaults.scss";
+@import "elements/_misc.scss";
 
 // OBJECTS
 //
-@import 'objects/_row.scss';
-@import 'objects/_section.scss';
+@import "objects/_row.scss";
+@import "objects/_section.scss";
 
 // COMPONENTS
 //
@@ -25,14 +25,613 @@
 //----------------------------------*\
 // Components
 //----------------------------------*/
-@import 'components/_section.scss';
-@import 'components/_button.scss';
-@import 'components/_link.scss';
-
+@import "components/_section.scss";
+@import "components/_button.scss";
+@import "components/_link.scss";
 
 // PARTIALS
-@import 'partials/_header.scss';
-@import 'partials/_footer.scss';
+@import "partials/_header.scss";
+@import "partials/_form.scss";
+@import "partials/_footer.scss";
+@import "partials/_menu.scss";
 
 // UTILITIES
-@import 'utilities/_flex.scss';
+@import "utilities/_flex.scss";
+
+// Mobile-First  Approach
+
+/*  MAIN */
+
+.container {
+  width: 100%;
+  max-width: 1208px;
+  margin: 0 auto;
+}
+
+// Stop page scrolling when modal or burger menu is open
+.stop-scrolling {
+  overflow: hidden;
+}
+
+// HERO SECTION
+
+.hero-section {
+  padding: 1.4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $black url("../images/landing/mobile-hero-bg.webp") center / cover
+    no-repeat;
+  height: 100vh;
+}
+
+.hero-wrapper {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1208px;
+  height: 100%;
+  position: relative;
+
+  .hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    &__title {
+      color: $white;
+      font-size: 35px;
+      font-weight: 500;
+      line-height: 120%;
+      text-align: center;
+      text-shadow: $text-shadow-medium;
+      margin: 0 auto 1rem;
+      width: auto;
+      max-width: 312px;
+    }
+
+    &__description {
+      color: $white;
+      font-size: 19px;
+      font-weight: 100;
+      line-height: 39px;
+      opacity: 0.9;
+      text-align: center;
+      margin-bottom: 5rem;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__cta {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+  }
+}
+
+// BOOKING  SECTION
+
+.booking-section {
+  background: $black url("../images/landing/booking-bg.webp") center/cover
+    no-repeat;
+  padding: 2rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    color: $white;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 120%;
+    text-align: center;
+    text-shadow: $text-shadow-light;
+    margin: 3rem auto;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.3rem solid $secondary-color-dark;
+      width: 3rem;
+      margin: 0 auto;
+      -webkit-transform: translateY(1.5rem);
+      transform: translateY(0.5rem);
+    }
+  }
+
+  &__description {
+    color: $white;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    text-shadow: $text-shadow-light;
+    margin: 1rem auto 4rem auto;
+    padding: 0.5rem 1rem;
+    width: auto;
+    max-width: 376px;
+  }
+  &__form-container {
+    width: 100%;
+    max-width: 463px;
+    margin: 0.5rem auto 0;
+    padding: 65px 25px;
+    border-radius: $border-radius;
+    border: 1px solid $gray-light-opacity;
+    background-color: $gray-dark;
+    box-shadow: $box-shadow-dark;
+  }
+}
+
+// MENU SECTION
+
+.menu-section {
+  &__container {
+    border-radius: $border-radius;
+    background-color: $gray-dark;
+    border: 1px solid $gray-light;
+    margin: 0rem auto;
+    padding: 6rem 2rem 3rem 2rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu__title {
+    color: $white;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.3rem solid $secondary-color-dark;
+      width: 3rem;
+      margin: 0 auto;
+      -webkit-transform: translateY(1.5rem);
+      transform: translateY(0.5rem);
+    }
+  }
+
+  .menu__tabs {
+    font-family: "Catamaran";
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .menu__tab {
+      display: block;
+      cursor: pointer;
+      padding: 1rem;
+      margin: 0.2rem auto;
+
+      &.active-tab {
+        color: $secondary-color-dark;
+      }
+
+      p {
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+        border-bottom: 1px dashed $gray-light;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 463px;
+
+    .tab-content {
+      display: none;
+      &.active-tab {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    & div:last-child > div:last-child,
+    & div:last-child {
+      border-bottom: none;
+    }
+
+    .food {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-bottom: 0.3rem;
+      border-bottom: 1px solid $gray-medium-opacity;
+
+      &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: $capitalize;
+        margin-bottom: 1rem;
+      }
+
+      &__ingredient {
+        color: $gray-medium;
+        opacity: $opacity;
+        font-weight: 200;
+        font-size: 21px;
+        line-height: 140%;
+        text-align: center;
+        text-transform: $capitalize;
+        margin-bottom: 1rem;
+      }
+
+      &__price {
+        color: $gray-extra-light;
+        font-family: "Catamaran";
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 43px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        text-transform: $capitalize;
+      }
+    }
+  }
+}
+
+// POPULAR DISHES SECTION
+.popular-dishes-section {
+  margin: 3rem auto;
+}
+
+.popular-dishes {
+  border-radius: 3px;
+  background-color: $gray-dark;
+  border: 1px solid $gray-light;
+  margin: 0rem auto;
+  padding: 4rem 0.5rem;
+
+  &____content {
+    height: auto;
+    min-height: 500px;
+  }
+  &__title {
+    color: $white;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.3rem solid $secondary-color-dark;
+      width: 3rem;
+      margin: 0 auto;
+      -webkit-transform: translateY(1.5rem);
+      transform: translateY(0.5rem);
+    }
+  }
+}
+
+.slider {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__arrows {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span {
+      font-family: "Catamaran";
+      font-size: 23px;
+      font-weight: 400;
+      padding: 0 1.4rem;
+      line-height: 39px;
+      text-align: center;
+    }
+  }
+}
+
+@media (768px <= width <= 991.8px) {
+  // HERO SECTION
+
+  .hero-section {
+    background: $black url("../images/landing/tablet-hero-bg.webp") center /
+      cover no-repeat;
+    height: 100vh;
+
+    .hero-content {
+      &__title {
+        width: auto;
+        max-width: 584px;
+        margin: 2rem auto 1rem auto;
+        font-size: 52px;
+      }
+      &__description {
+        font-size: 23px;
+        margin-bottom: 3rem;
+      }
+      &__cta {
+        flex-direction: row;
+      }
+    }
+  }
+
+  // BOOKING  SECTION
+
+  .booking-section {
+    background-position: top;
+    padding: 2rem 0;
+
+    &__form-container {
+      margin: 0.5rem auto;
+      padding: 65px 40px;
+    }
+  }
+
+  // MENU SECTION
+  .menu-section {
+    margin: 1rem auto;
+    padding: 3rem 2rem;
+
+    &__container {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .menu__title {
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 53px;
+    }
+
+    &__body {
+      max-width: 100%;
+
+      .food {
+        align-items: flex-start;
+        padding: 1rem 1rem;
+
+        &__title {
+          margin-bottom: 0.5rem;
+        }
+
+        &__description {
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        &__ingredient {
+          margin-bottom: 0;
+          text-align: left;
+        }
+      }
+    }
+    .menu__tabs {
+      flex-direction: row;
+      font-size: 26px;
+      p {
+        line-height: 43px;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+
+  // POPULAR DISHES SECTION
+  .popular-dishes-section {
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+
+  .popular-dishes {
+    width: 100%;
+    max-width: 820px;
+    height: auto;
+    padding: 2rem;
+    margin: 0rem auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  // HERO SECTION
+
+  .hero-section {
+    background: $black url("../images/landing/desktop-hero-bg.webp") center
+      no-repeat;
+    height: 956px;
+    padding: 3rem;
+
+    .hero-content {
+      &__title {
+        width: auto;
+        max-width: 584px;
+        margin: 2rem auto 1rem auto;
+        font-size: 52px;
+      }
+      &__description {
+        font-size: 23px;
+        margin-bottom: 3rem;
+      }
+      &__cta {
+        flex-direction: row;
+      }
+    }
+  }
+
+  // BOOKING  SECTION
+
+  .booking-section {
+    background: $black url("../images/landing/booking-bg.webp") center / cover
+      no-repeat;
+    padding: 2rem 0;
+
+    &__form-container {
+      max-width: 480px;
+      padding: 64px;
+      margin: 0.5rem 0;
+    }
+    &__content-container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 2rem 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__title {
+      color: $white;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 120%;
+      text-align: center;
+      color: $white;
+      text-shadow: $text-shadow-light;
+      margin: 5rem 0 2rem 6.5rem;
+
+      &::after {
+        content: "";
+        width: 2.5rem;
+        margin: 0;
+      }
+    }
+    &__description {
+      color: $white;
+      font-size: 20px;
+      text-align: inherit;
+      margin: 1rem 1rem 1rem 6.5rem;
+      padding: 0.5rem 1rem 0 0rem;
+    }
+  }
+
+  // MENU SECTION
+  .menu-section {
+    margin: 3rem auto;
+    padding: 1rem;
+
+    &__container {
+      height: auto;
+      min-height: 500px;
+      padding: 7rem;
+    }
+
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .menu__title {
+      font-size: 40px;
+      line-height: 53px;
+      margin-bottom: 1.5rem;
+
+      &::after {
+        margin: 0.2rem 0;
+      }
+    }
+
+    .menu__tabs {
+      flex-direction: row;
+
+      .menu__tab {
+        padding: 1rem 0 1rem 2rem;
+      }
+    }
+
+    &__body {
+      max-width: 100%;
+
+      .food {
+        align-items: flex-start;
+        padding: 1rem 0;
+
+        &__title {
+          margin-bottom: 0.5rem;
+        }
+
+        &__description {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        &__ingredient {
+          margin-bottom: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // POPULAR DISHES SECTION
+  .popular-dishes-section {
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+
+  .popular-dishes {
+    height: auto;
+    padding: 7rem;
+    margin: 0rem auto;
+  }
+
+  .slider {
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__arrows {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      span {
+        font-size: 21px;
+        padding: 0 0.5rem;
+        line-height: 39px;
+      }
+      img {
+        width: 30px;
+      }
+    }
+  }
+}

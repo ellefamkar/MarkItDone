@@ -16,7 +16,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Starter Kit</title>
+  <meta property="og:title" content=" Mercadito restaurant" />
+  <meta property="og:description" content="Mercadito restaurant" />
+  <title>Mercadito restaurant</title>
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
@@ -35,7 +37,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1.0.0">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1.0.0">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1.0.0">
-  <!-- <link rel="manifest" href="site.webmanifest?v=1.0.0"> -->
+  <link rel="manifest" href="site.webmanifest?v=1.0.0">
   <link rel="mask-icon" href="safari-pinned-tab.svg?v=1.0.0" color="#3c3ce5">
   <link rel="shortcut icon" href="favicon.ico?v=1.0.0">
 
@@ -44,7 +46,7 @@
   <meta name="msapplication-TileColor" content="#3c3ce5">
 
   <!-- Color the status bar on mobile devices -->
-  <!-- <meta name="theme-color" content="#ffffff"> -->
+  <meta name="theme-color" content="#ffffff">
 
   <!-- build:css styles/vendor.min.css -->
   <!-- endbuild -->
@@ -55,15 +57,423 @@
 </head>
 
 <body>
-  <h1>Hi, FROM HTML STARTER KIT</h1>
   <!-- build:js scripts/vendor.min.js -->
   <!-- endbuild -->
+
+  <!-- hero section  -->
+  <section class="hero-section">
+    <div class="hero-wrapper container">
+      <header class="main-header">
+        <img class="main-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
+        <nav class="main-navbar nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#second-section" class="active">
+                WHY US
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#menu">
+                Menu
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#popular-dishes">
+                Popular dishes
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#booking">
+                Book
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#">
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div class="nav__toggler">
+            <div class="bar bar-one"></div>
+            <div class="bar bar-two"></div>
+            <div class="bar bar-three"></div>
+          </div>
+        </nav>
+      </header>
+      <div class="hero-content">
+        <h1 class="hero-content__title">
+          Book a table in the best
+          Mexican restaturant
+        </h1>
+        <p class="hero-content__description">
+          30% off for the Christmas
+        </p>
+        <div class="hero-content__cta">
+          <a href="#booking" class="btn btn--inline button--secondary ">
+            Book now
+          </a>
+          <a href="#menu" class="btn btn--inline  button--primary">
+            See Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- menu section  -->
+  <section class="menu-section container" id="menu">
+    <div class="menu-section__container">
+      <div class="menu-section__content">
+        <div class="menu-section__header">
+          <h2 class="menu__title">Our Menu</h2>
+          <div class="menu__tabs">
+            <a class="menu__tab active-tab" data-tab-target="menu-starter">
+              <p>Starter</p>
+            </a>
+            <a class="menu__tab" data-tab-target="menu-main-dishes">
+              <p>Main dishes</p>
+            </a>
+            <a class="menu__tab" data-tab-target="menu-desserts">
+              <p>desserts</p>
+            </a>
+          </div>
+        </div>
+        <div class="menu-section__body">
+          <div class="tab-content active-tab" id="menu-starter">
+            <div class="food">
+              <h3 class="food__title">Dim Sums</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Chestnuts, mushroom, spring onion, ginger, coriander
+                </p>
+                <span class="food__price">$36</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Pork Wontons</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Pork, chestnuts, bamboo shoots, spring onion egg, wonton </p>
+                <span class="food__price">$30</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Real Kung Pao chicken</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Peanuts, chicken tights, rice wine, cornflour, soy sauce, chillies </p>
+                <span class="food__price">$18</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Stir Fried Tofu with Rice</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Tofu, rice, vinger, soy sauce, seasmae oil, ginger </p>
+                <span class="food__price">$25</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Chinese pepper steak</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Steak, pepper, vinger wine, ginger
+                </p>
+                <span class="food__price">$25</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Chicken with Chestnuts</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Chicken, chestnuts, soy sauce, vinger
+                </p>
+                <span class="food__price">$19</span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="menu-main-dishes">
+            <div class="food">
+              <h3 class="food__title">Honey Walnut Shrimp</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Wulnuts, mayonnaise, prawns, honey, egg, rice flour
+                </p>
+                <span class="food__price">$15</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Kung Pao chicken</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Chicken tights, shaoxing wine, soy sauce, chilli, peanuts, cucumber
+                </p>
+                <span class="food__price">$29</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Tsao's chicken</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Chicken tights, rice vinger, rice wine, orange zest, banana ketchup, garlic
+                </p>
+                <span class="food__price">$36</span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="menu-desserts">
+            <div class="food">
+              <h3 class="food__title">Chinese Steamed Halibut</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Fillet halibut, ginger, coriander, soy sauce
+                </p>
+                <span class="food__price">$18</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Dim Sums</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Chestnuts, mushroom, spring onion, ginger, coriander
+                </p>
+                <span class="food__price">$36</span>
+              </div>
+            </div>
+            <div class="food">
+              <h3 class="food__title">Chinese pepper steak</h3>
+              <div class="food__description">
+                <p class="food__ingredient">
+                  Steak, pepper, vinger wine, ginger
+                </p>
+                <span class="food__price">$17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- slider section  -->
+  <section class="popular-dishes-section container" id="popular-dishes">
+    <div class="popular-dishes">
+      <div class="popular-dishes__content-container">
+        <div class="popular-dishes__content slider" id="slider">
+          <div class="slider__header" id="slider_header">
+            <h2 class="popular-dishes__title">The Most Popular Dishes</h2>
+            <div class="slider__arrows" id="prev-next">
+              <span id="prev" onclick="prev()">
+                <img src="images/icons/left-arrow.svg" alt="slider left arrow">
+              </span>
+              <span id="slider_number"></span>
+              <span id="next" onclick="next()">
+                <img src="images/icons/right-arrow.svg" alt="slider right arrow">
+              </span>
+            </div>
+          </div>
+          <div class="row" id="slider_content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- booking section  -->
+  <section class="booking-section" id="booking">
+    <div class="booking-section__content-container">
+      <div class="booking-section__info">
+        <h2 class="booking-section__title">
+          Book a Table
+        </h2>
+        <p class="booking-section__description">
+          When we first opened our restaturant, it didn't take a long time for us to prove our diffrence.
+        </p>
+      </div>
+      <div class="booking-section__form-container">
+        <form class="form">
+          <!-- name  -->
+          <div class="form-group">
+            <label for="firstname">Your Name</label>
+            <input type="text" name="name" class="form-control required" placeholder="Enter name" data-error="name">
+            <small id="name" class="form-text text-danger"></small>
+          </div>
+          <!-- phone number  -->
+          <div class="form-group">
+            <label for="exampleInputphone">your phone</label>
+            <input type="text" name="phone" class="form-control required" placeholder="phone">
+            <small id="phone" class="form-text text-danger"></small>
+          </div>
+          <!-- email  -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">your email </label>
+            <input type="email" name="email" class="form-control required" placeholder="email">
+            <small id="email" class="form-text text-danger"></small>
+          </div>
+          <!-- Date  -->
+          <div class="form-group">
+            <label for="exampleInputDate1">Date </label>
+            <input type="date" name="calendar" class="form-control required" pattern="\d{1,2}/\d{1,2}/\d{4}"
+              value="2018-07-22" placeholder="123-45-678">
+            <small id="calendar" class="form-text text-danger"></small>
+          </div>
+          <!-- time  -->
+          <div class="form-group">
+            <label for="exampleInputTime1">Time </label>
+            <input type="time" name="time" class="form-control required" placeholder="Enter Time" value="18:00">
+            <small id="time" class="form-text text-danger"></small>
+          </div>
+          <!-- number of people  -->
+          <div class="form-group">
+            <label for="exampleInputNumber of people1">Number of people </label>
+            <div class="counter-container">
+              <div class="decrement-wrapper">
+                <div class="counter-divs decrement">
+                  <span class="decrement-content">
+                    -
+                    <span>
+                </div>
+              </div>
+              <div class="reset-wrapper">
+                <div class="counter-divs reset">
+                  <input type="number" value="2" name="len" class="form-control counter-input required" placeholder="2">
+                </div>
+              </div>
+              <div class="increment-wrapper">
+                <div class="counter-divs increment">
+                  <span class="increment-content">
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+            <small id="len" class="form-text text-danger"></small>
+          </div>
+          <div class="form-group">
+            <button type="button" id="submit-btn" class="btn button--secondary btn--block">BOOK NOW</button>
+          </div>
+        </form>
+        <div class=" alert" id="success">
+          <div class="alert-header">
+            Success icon
+          </div>
+          <div class="alert-content" id="success_content">
+            <p>Success message.</p>
+          </div>
+          <div class="alert-footer">
+            <button type="button" class="btn btn-primary" id="success_btn">OK</button>
+          </div>
+        </div>
+        <div class="alert" id="reject">
+          <div class="alert-header">
+            reject icon
+          </div>
+          <div class="alert-content" id="reject_content">
+
+          </div>
+          <div class="alert-footer">
+            <button type="button" class="btn btn-danger" id="reject_btn">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer  -->
+  <footer>
+    <p>All rights are reserved for Mercadito Restaurant © 2019</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
 
   <!-- build:js scripts/main.min.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    let default_slider = 1;
+
+    // Slider data
+    const contents = {
+      '1': {
+        'url': 'images/slide-1.jpg',
+        'title': 'Sweet and sour pork',
+        'description': 'Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the main material of this dish. The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate people appetite.',
+        'price': '36'
+      },
+      '2': {
+        'url': 'images/slide-2.jpg',
+        'title': 'Pork Wontons',
+        'description': 'There are no rules when it comes to dipping sauces for pork wontons. Go with what you like. I looooove pairing it with a gingery, vinegary based dipping sauce with a hint of sesame oil. ',
+        'price': '54'
+      },
+      '3': {
+        'url': 'images/3.jpg',
+        'title': 'Sweet and sour pork',
+        'description': 'This savory pepper steak sauce has a combination of beef and chicken broth which adds depth of flavor. Soy sauce and hot sauce enhance the other flavors in the dish, and just a touch of hot sauce is used, which doesn"t make it spicy.',
+        'price': '12'
+      }
+    };
+
+    // Show animation (fading)
+    const unFade = (id) => {
+      if (opacity <= 1) {
+        opacity = opacity + 0.1;
+        setTimeout(function () { unFade(id) }, 100);
+      }
+      document.getElementById(id).style.opacity = opacity;
+    }
+
+    // Switch between slider datas
+    const switchSlider = (page_number = 1) => {
+      let data = contents[page_number];
+      let result = `
+            <div class="col-md-8 col-lg-8 col-sm-12">
+                <img src="${data.url}" alt="image" width="100%">
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+              <p>
+                ${data.title}
+                </p>
+                <p>
+                    ${data.description}
+                </p>
+                <p>$${data.price}</p>
+            </div>
+        `;
+      let number = page_number + '/' + Object.keys(contents).length;
+      opacity = 0;
+      document.getElementById('slider_content').innerHTML = result;
+      document.getElementById('slider_number').innerHTML = number;
+      unFade('slider_content');
+    }
+    switchSlider();
+
+    // previous button action
+    const prev = () => {
+      default_slider = default_slider - 1;
+      if (default_slider < 1) {
+        default_slider = Object.keys(contents).length;
+      }
+      switchSlider(default_slider);
+    };
+
+    // next button action
+    const next = () => {
+      default_slider = default_slider + 1;
+      if (default_slider > Object.keys(contents).length) {
+        default_slider = 1;
+      }
+      switchSlider(default_slider);
+    };
+  </script>
 </body>
 
 </html>
-
