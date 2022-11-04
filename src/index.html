@@ -273,12 +273,12 @@
           <div class="popular-dishes__content slider" id="slider">
             <div class="slider__header u-flex u-flex--column" id="slider_header">
               <h2 class="popular-dishes__title">The Most Popular Dishes</h2>
-              <div class="slider__arrows" id="prev-next">
-                <span id="prev" onclick="prev()">
+              <div class="slider__arrows" id="slider-arrows">
+                <span id="prev-button" onclick="prevButton()">
                   <img src="images/icons/left-arrow.svg" alt="slider left arrow">
                 </span>
                 <span id="slider_number"></span>
-                <span id="next" onclick="next()">
+                <span id="next-button" onclick="nextButton()">
                   <img src="images/icons/right-arrow.svg" alt="slider right arrow">
                 </span>
               </div>
@@ -429,7 +429,6 @@
     const switchSlider = (pageNumber = 1) => {
 
       let data = sliderContent[pageNumber];
-
       let result = '';
       result += `
             <div class="slider__content-img col-xl-7 col-lg-6  col-md-12 col-12 px-0">
@@ -446,8 +445,12 @@
             </div>
         `;
 
-      let number = pageNumber + '/' + Object.keys(sliderContent).length;
+      let number = `${pageNumber} / ${Object.keys(sliderContent).length}`;
+      // number.classList.add("active");
       let slideNumber = document.querySelector("#slider_number");
+      let activeSlide = slideNumber.innerText.split("/")[0];
+      activeSlide += activeSlide;
+      // activeSlide.style["color"] = 'blue';
       slideNumber.innerHTML = number;
 
       let sliderContainer = document.querySelector("#slider_content");
@@ -457,9 +460,10 @@
     switchSlider();
 
     let slider = 1;
+
     // previous button action
-    const prev = () => {
-      slider = slider - 1;
+    const prevButton = () => {
+      slider -= 1;
       if (slider < 1) {
         slider = Object.keys(sliderContent).length;
       }
@@ -467,17 +471,13 @@
     };
 
     // next button action
-    const next = () => {
-      slider = slider + 1;
+    const nextButton = () => {
+      slider += 1;
       if (slider > Object.keys(sliderContent).length) {
         slider = 1;
       }
       switchSlider(slider);
     };
-
-    let activeSlide = document.querySelector("#slide_number");
-    let getActiveNum = activeSlide.innerText.split("/")[0];
-    console.log(getActiveNum);
 
   </script>
 </body>
