@@ -11,13 +11,21 @@ $gray-dark: #181110;
 $white-high-opacity: #ffffff33;
 $white-medium-opacity: #ffffff1a;
 $white: #ffffff;
+$black-opacity-low: rgba(0, 0, 0, 0.2);
 $black-opacity: rgba(0, 0, 0, 0.8);
 $black: #000000;
+
+// alert colors
+$alert-gray-dark: #1e1e1e;
+$alert-gray-light: #282828bd;
+$alert-gray-medium: #2d2d2d;
+$alert-gray: #282828;
 
 //opacity
 $opacity: 0.8;
 
 // border-radius
+$border-radius-medium: 6.28148px;
 $border-radius: 3px;
 
 // box-shadow

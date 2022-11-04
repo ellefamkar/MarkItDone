@@ -116,7 +116,7 @@ const switchSlider = (pageNumber = 1) => {
             </div>
         `;
 
-  let number = `<span class="active-slider">${pageNumber} <span> <span class="deactive-color"> /  &nbsp ${
+  let number = `<span class="active-slider">${pageNumber} &nbsp </span> <span class="deactive-slider"> /  &nbsp ${
     Object.keys(sliderContent).length
   }</span>`;
   let slideNumber = document.querySelector("#slider_number");

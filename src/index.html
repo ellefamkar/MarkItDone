@@ -14,7 +14,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
+  <meta name="description" content="Mercadito restaurant">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content=" Mercadito restaurant" />
   <meta property="og:description" content="Mercadito restaurant" />
@@ -48,18 +48,12 @@
   <!-- Color the status bar on mobile devices -->
   <meta name="theme-color" content="#ffffff">
 
-  <!-- build:css styles/vendor.min.css -->
-  <!-- endbuild -->
-
   <!-- build:css styles/main.min.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
 
 <body>
-  <!-- build:js scripts/vendor.min.js -->
-  <!-- endbuild -->
-
 
   <!-- header  -->
   <header class="main-header">
@@ -302,37 +296,48 @@
         </div>
         <div class="booking-section__form-container">
           <form class="form">
+
             <!-- name  -->
             <div class="form-group">
               <label for="firstname">Your Name</label>
-              <input type="text" name="name" class="form-control required" placeholder="Enter name" data-error="name">
+              <input type="text" name="name" oninput="validation('name', this.value, 'text', 4, this.name, true)"
+                class="form-control validation" placeholder="Enter name" data-error="name">
               <small id="name" class="form-text text-danger"></small>
             </div>
+
             <!-- phone number  -->
             <div class="form-group">
               <label for="exampleInputphone">your phone</label>
-              <input type="text" name="phone" class="form-control required" placeholder="phone">
+              <input type="text" name="phone" oninput="validation('phone', this.value, 'number', 11, this.name, true)"
+                class="form-control validation" placeholder="phone">
               <small id="phone" class="form-text text-danger"></small>
             </div>
+
             <!-- email  -->
             <div class="form-group">
               <label for="exampleInputEmail1">your email </label>
-              <input type="email" name="email" class="form-control required" placeholder="email">
+              <input type="email" name="email" oninput="validation('email', this.value, 'email', null, this.name, true)"
+                class="form-control validation" placeholder="email">
               <small id="email" class="form-text text-danger"></small>
             </div>
+
             <!-- Date  -->
             <div class="form-group">
               <label for="exampleInputDate1">Date </label>
-              <input type="date" name="calendar" class="form-control required" pattern="\d{1,2}/\d{1,2}/\d{4}"
-                value="2018-07-22" placeholder="123-45-678">
+              <input type="date" name="date" oninput="validation('date', this.value, 'date', null, this.name, true)"
+                class="form-control validation" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
+                placeholder="123-45-678">
               <small id="calendar" class="form-text text-danger"></small>
             </div>
+
             <!-- time  -->
             <div class="form-group">
               <label for="exampleInputTime1">Time </label>
-              <input type="time" name="time" class="form-control required" placeholder="Enter Time" value="18:00">
+              <input type="time" name="time" oninput="validation('time', this.value, 'time', null, this.name, true)"
+                class="form-control validation" placeholder="Enter Time" value="18:00">
               <small id="time" class="form-text text-danger"></small>
             </div>
+
             <!-- number of people  -->
             <div class="form-group">
               <label for="exampleInputNumber of people1">Number of people </label>
@@ -346,8 +351,10 @@
                 </div>
                 <div class="reset-wrapper">
                   <div class="counter-divs reset">
-                    <input type="number" value="2" name="len" class="form-control counter-input required"
-                      placeholder="2">
+                    <input type="number" value="2" name="number"
+                      oninput="validation('number', this.value, 'number', null, this.name, true, false)"
+                      class="form-control counter-input validation" placeholder="2">
+                    <small id="number" class="form-text text-danger"></small>
                   </div>
                 </div>
                 <div class="increment-wrapper">
@@ -361,31 +368,9 @@
               <small id="len" class="form-text text-danger"></small>
             </div>
             <div class="form-group">
-              <button type="button" id="submit-btn" class="button button--secondary button--block">BOOK NOW</button>
+              <button type="button" id="submit-button" class="button button--secondary button--block">BOOK NOW</button>
             </div>
           </form>
-          <div class=" alert" id="success">
-            <div class="alert-header">
-              Success icon
-            </div>
-            <div class="alert-content" id="success_content">
-              <p>Success message.</p>
-            </div>
-            <div class="alert-footer">
-              <button type="button" class="button button-primary" id="success_btn">OK</button>
-            </div>
-          </div>
-          <div class="alert" id="reject">
-            <div class="alert-header">
-              reject icon
-            </div>
-            <div class="alert-content" id="reject_content">
-
-            </div>
-            <div class="alert-footer">
-              <button type="button" class="button button-modal btn-danger" id="reject_btn">OK</button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -397,9 +382,196 @@
     <p>All rights are reserved for Mercadito Restaurant © 2022</p>
   </footer>
 
+  <!-- booking alerts  modal -->
+  <!-- alerts container  -->
+  <div class="alert-container">
+    <!-- Success alert  -->
+    <div class="alert" id="success">
+      <div class="alert-header">
+        <div class="alert-header__icon">
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+      </div>
+      <div class="alert-content" id="success_content">
+        <h3>Thank You.</h3>
+        <p>Your reservasion has bee received, we’ll be happy to see you.</p>
+      </div>
+      <div class="alert-footer">
+        <button type="button" class="button button--block button--primary" id="success--button">OK</button>
+      </div>
+    </div>
+    <!-- reject alert  -->
+    <div class="alert" id="reject">
+      <div class="alert-header__icon">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <div class="alert-content" id="reject_content">
+        <h3>We've a Problem</h3>
+        <p>Unfourtunately a problem occured during the operation. We’re so sorry for the inconvenience.</p>
+      </div>
+      <div class="alert-footer">
+        <button type="button" class="button button--block button--primary" id="reject--button">OK</button>
+      </div>
+    </div>
+  </div>
   <!-- build:js scripts/main.min.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+  <script>
+
+    let errors = [];
+
+    const validation = (error_id, value, type, len, name, required = false) => {
+      if (required == true && value.length <= 0) {
+        if (!errors.includes(name)) {
+          errors.push(name);
+        }
+        document.getElementById(error_id).innerHTML = `The ${name} is required`;
+        return;
+      }
+      if (error_id == '' || value == '' || type == '') {
+        console.error('The iserted varaible are wrong');
+      }
+      if (type == 'text') {
+        if (required == true && (value == '' || value.length <= 0)) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is required`;
+        } else {
+          if (len !== null && value.length <= len) {
+            if (!errors.includes(name)) {
+              errors.push(name);
+            }
+            document.getElementById(error_id).innerHTML = `The ${name} most be longger`;
+          } else {
+            document.getElementById(error_id).innerHTML = ``;
+          }
+        }
+      }
+      if (type == 'number') {
+        if (isNaN(value) || (len !== null && value.length != len)) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+        } else {
+          document.getElementById(error_id).innerHTML = '';
+        }
+      }
+      if (type == 'email') {
+        if (value.length <= 0 || value.indexOf("@") === -1 || value.indexOf(".") === -1 || value.endsWith('.')) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+        } else {
+          document.getElementById(error_id).innerHTML = '';
+        }
+      }
+      if (type == 'date') {
+        console.log('here');
+        let day = value.split('-')[2];
+        let month = value.split('-')[1];
+        let year = value.split('-')[0];
+        if (year.length != 4) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          return;
+        }
+        if (month.length != 2) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          return;
+        }
+        if (day.length != 2) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          return;
+        }
+        document.getElementById(error_id).innerHTML = '';
+      }
+      if (type == 'time') {
+        let houre = value.split(':')[0];
+        let minutes = value.split(':')[1];
+        if (isNaN(houre) || houre.length != 2 || houre > 23 || houre < 0) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          return;
+        }
+        if (isNaN(minutes) || minutes.length != 2 || minutes > 59 || minutes < 00) {
+          if (!errors.includes(name)) {
+            errors.push(name);
+          }
+          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          return;
+        }
+        document.getElementById(error_id).innerHTML = '';
+        return;
+      }
+
+    }
+
+
+    document.getElementById('submit-button').addEventListener('click', () => {
+      errors = [];
+      let inputs = document.getElementsByClassName('validation');
+      for (let i = 0; inputs.length > i; i++) {
+        var event = new Event('input', {
+          bubbles: true,
+          cancelable: true,
+        });
+        inputs[i].dispatchEvent(event);
+      }
+      console.log(document.getElementById('success'));
+      if (errors.length > 0) {
+        let message_err = 'something is wrong, please check ';
+        for (let e = 0; errors.length > e; e++) {
+          if (errors.length > 1) {
+            if (errors[e + 1] !== undefined) {
+              message_err = message_err + errors[e] + ', ';
+            } else {
+              message_err = message_err + 'and ' + errors[e] + '.';
+              message_err = message_err.replace(', and', ' and');
+            }
+          } else {
+            message_err = message_err + errors[e] + '.';
+          }
+        }
+        // document.getElementById('reject_content').innerHTML = `<p>${message_err}</p>`;
+        document.getElementById('reject').classList.add('active-form');
+        let alertContainer = document.querySelector(".alert-container");
+        alertContainer.classList.toggle("toggle-form-alert");
+        alertContainer.classList.toggle("stop-scrolling");
+      } else {
+        document.getElementById('success').classList.add('active-form');
+        let alertContainer = document.querySelector(".alert-container");
+        alertContainer.classList.toggle("toggle-form-alert");
+        alertContainer.classList.toggle("stop-scrolling");
+      }
+
+      document.getElementById('success--button').addEventListener('click', () => {
+        document.getElementById('success').classList.remove('active-form');
+        let alertContainer = document.querySelector(".alert-container");
+        alertContainer.classList.toggle("stop-scrolling");
+        alertContainer.classList.toggle("toggle-form-alert");
+      });
+
+      document.getElementById('reject--button').addEventListener('click', () => {
+        document.getElementById('reject').classList.remove('active-form');
+        let alertContainer = document.querySelector(".alert-container");
+        alertContainer.classList.toggle("stop-scrolling");
+        alertContainer.classList.toggle("toggle-form-alert");
+      });
+    });
 
   </script>
 </body>

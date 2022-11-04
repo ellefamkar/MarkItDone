@@ -63,7 +63,8 @@
     img {
       cursor: $pointer;
     }
-    span {
+
+    & > span {
       font-family: $catamaran;
       font-size: 23px;
       font-weight: 200;
@@ -166,7 +167,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      span {
+      & > span {
         font-size: 21px;
         padding: 0 0.5rem;
         line-height: 39px;
@@ -234,7 +235,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      span {
+      & > span {
         font-size: 21px;
         padding: 0 0.5rem;
         line-height: 39px;
@@ -244,4 +245,14 @@
       }
     }
   }
+}
+
+// ACTIVE SLIDE NUMBER
+.active-slider {
+  color: $secondary-color-dark;
+}
+
+// DEACTIVE SLIDE NUMBER
+.deactive-slider {
+  color: $white;
 }
