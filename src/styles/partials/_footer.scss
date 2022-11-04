@@ -14,13 +14,3 @@ footer {
     text-align: center;
   }
 }
-
-@media screen and (min-width: 768px) {
-  footer {
-    padding: 20px 0;
-    p {
-      font-size: 16px;
-      max-width: 680px;
-    }
-  }
-}

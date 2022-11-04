@@ -17,23 +17,4 @@
     height: 78px;
     width: 143px;
   }
-
-  @include mq(md) {
-    top: 1%;
-    flex-direction: column;
-    align-items: center;
-    &__logo {
-      width: 237px;
-      height: 130px;
-    }
-  }
-  @include mq(lg) {
-    align-items: end;
-    flex-direction: row;
-
-    &__logo {
-      width: 208px;
-      height: 113px;
-    }
-  }
 }

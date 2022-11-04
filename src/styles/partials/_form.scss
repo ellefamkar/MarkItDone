@@ -111,11 +111,6 @@
   align-items: center;
   z-index: 10;
   background-color: $gray-dark;
-
-  // TABLET AND DESKTOP FORMAT STYLES
-  @include mq(md) {
-    background: $alert-gray;
-  }
 }
 
 .toggle-form-alert {
@@ -194,10 +189,5 @@
       border-radius: $border-radius-medium;
       border-radius: 6.28148px;
     }
-  }
-
-  // TABLET AND DESKTOP FORMAT STYLES
-  @include mq(md) {
-    box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
   }
 }
