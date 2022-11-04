@@ -38,7 +38,6 @@
 // PARTIALS
 @import "partials/_header.scss";
 @import "partials/_navbar.scss";
-@import "partials/_menu.scss";
 @import "partials/_slider.scss";
 @import "partials/_form.scss";
 @import "partials/_footer.scss";
@@ -204,6 +203,7 @@
     width: auto;
     max-width: 376px;
   }
+
   &__form-container {
     width: 100%;
     max-width: 463px;
@@ -597,9 +597,9 @@
   }
 
   // MINI DESKTOP FORMAT STYLES
-  @include mq(md, wide) {
+  @include mq(lg, wide) {
     &__content {
-      min-height: max-content;
+      min-height: 380px;
     }
   }
 
@@ -618,6 +618,14 @@
         margin: 0.2rem 0;
       }
     }
+    &__content {
+      display: block;
+      height: auto;
+      min-height: 380px;
+    }
+  }
+
+  @include mq(wide) {
     &__content {
       display: block;
       height: auto;

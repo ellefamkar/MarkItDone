@@ -271,7 +271,7 @@
       <div class="popular-dishes">
         <div class="popular-dishes__content-container">
           <div class="popular-dishes__content slider" id="slider">
-            <div class="slider__header" id="slider_header">
+            <div class="slider__header u-flex u-flex--column" id="slider_header">
               <h2 class="popular-dishes__title">The Most Popular Dishes</h2>
               <div class="slider__arrows" id="prev-next">
                 <span id="prev" onclick="prev()">
@@ -283,7 +283,7 @@
                 </span>
               </div>
             </div>
-            <div class="slider__content" id="slider_content"></div>
+            <div class="slider__content row mx-0" id="slider_content"></div>
           </div>
         </div>
       </div>
@@ -432,10 +432,10 @@
 
       let result = '';
       result += `
-            <div class="slider__content-img">
+            <div class="slider__content-img col-xl-7 col-lg-6  col-md-12 col-12 px-0">
                 <img src="${data.url}" alt="${data.title}">
             </div>
-            <div class="slider__content-container">
+            <div class="slider__content-container  col-xl-5 col-lg-6 col-md-12 col-12 u-flex u-flex--column u-flex--center">
               <p class="slider__content-title">
                 ${data.title}
                 </p>
@@ -456,8 +456,6 @@
     }
     switchSlider();
 
-
-
     let slider = 1;
     // previous button action
     const prev = () => {
@@ -476,8 +474,6 @@
       }
       switchSlider(slider);
     };
-
-
 
     let activeSlide = document.querySelector("#slide_number");
     let getActiveNum = activeSlide.innerText.split("/")[0];
