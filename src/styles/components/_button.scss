@@ -22,6 +22,10 @@
     transform: scale(1.05);
     opacity: $opacity;
   }
+  &.form__submit-button:hover {
+    transform: scale(1.02);
+    opacity: 1;
+  }
 }
 
 .button--block {
