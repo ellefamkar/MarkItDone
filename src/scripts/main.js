@@ -72,356 +72,77 @@
   });
 })();
 
-// FORM VALIDATION
-// const inputs = ["name", "phone", "email", "calendar", "time", "len"];
-// const input = document.getElementsByClassName("required");
+// POPULAR DISHES SLIDER
+const sliderContent = {
+  1: {
+    url: "images/slider/slide-1.webp",
+    title: "Sweet and sour pork",
+    description:
+      "Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the main material of this dish. <br /> The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate people appetite.",
+    price: "36",
+  },
+  2: {
+    url: "images/slider/slider-2.webp",
+    title: "Pork Wontons",
+    description:
+      "There are no rules when it comes to dipping sauces for pork wontons. Go with what you like. <br /> I looooove pairing it with a gingery, vinegary based dipping sauce with a hint of sesame oil. ",
+    price: "54",
+  },
+  3: {
+    url: "images/slider/slider-3.webp",
+    title: "Sweet and sour pork",
+    description:
+      'This savory pepper steak sauce has a combination of beef and chicken broth which adds depth of flavor. <br /> Soy sauce and hot sauce enhance the other flavors in the dish, and just a touch of hot sauce is used, which doesn"t make it spicy.',
+    price: "12",
+  },
+};
 
-// let errors = [];
+// Switch between slider datas
+const switchSlider = (pageNumber = 1) => {
+  let data = sliderContent[pageNumber];
+  let result = "";
+  result += `
+            <div class="slider__content-img col-xl-7 col-lg-6  col-md-12 col-12 px-0">
+                <img src="${data.url}" alt="${data.title}">
+            </div>
+            <div class="slider__content-container  col-xl-5 col-lg-6 col-md-12 col-12 u-flex u-flex--column u-flex--center">
+              <p class="slider__content-title">
+                ${data.title}
+                </p>
+                <p class="slider__content-description">
+                    ${data.description}
+                </p>
+                <p class="slider__content-price">$${data.price}</p>
+            </div>
+        `;
 
-// const name = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   console.log(value.length);
-//   if (value == "" || value.length <= 0) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is required`;
-//     return false;
-//   } else {
-//     if (value.length <= 4) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(name).innerHTML = `The ${name} most be longger`;
-//       return false;
-//     }
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
+  let number = `<span class="active-slider">${pageNumber} <span> <span class="deactive-color"> /  &nbsp ${
+    Object.keys(sliderContent).length
+  }</span>`;
+  let slideNumber = document.querySelector("#slider_number");
+  slideNumber.innerHTML = number;
 
-// const email = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   if (
-//     value.length <= 0 ||
-//     value.indexOf("@") === -1 ||
-//     value.indexOf(".") === -1
-//   ) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
+  let sliderContainer = document.querySelector("#slider_content");
+  sliderContainer.innerHTML = result;
+};
+switchSlider();
 
-// const phone = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   if (isNaN(value) || value.length != 11) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
+let slider = 1;
 
-// const calendar = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   let day = value.split("-")[2];
-//   let month = value.split("-")[1];
-//   let year = value.split("-")[0];
-//   if (year.length != 4) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   if (month.length != 2) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   if (day.length != 2) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
+// previous button action
+const prevButton = () => {
+  slider -= 1;
+  if (slider < 1) {
+    slider = Object.keys(sliderContent).length;
+  }
+  switchSlider(slider);
+};
 
-// const time = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   let houre = value.split(":")[0];
-//   let minutes = value.split(":")[1];
-//   if (isNaN(houre) || houre.length != 2 || houre > 23 || houre < 0) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   if (isNaN(minutes) || minutes.length != 2 || minutes > 59 || minutes < 0) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
-
-// const len = (name) => {
-//   let target = document.querySelector(`input[name=${name}]`);
-//   let value = target.value;
-//   if (isNaN(value) || value == 0) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(name).innerHTML = `The ${name} is not available`;
-//     return false;
-//   }
-//   document.getElementById(name).innerHTML = "";
-//   return true;
-// };
-
-// const validator = (target_name) => {
-//   console.log(target_name);
-//   let result = eval(target_name + `(target_name)`);
-// };
-
-// Array.from(input).forEach(function (i) {
-//   i.addEventListener("input", (e) => {
-//     let target_name = e.target.name;
-//     eval(target_name + `(target_name)`);
-//   });
-// });
-
-// document.getElementById("submit-btn").addEventListener("click", () => {
-//   errors = [];
-//   Array.from(inputs).forEach(function (i) {
-//     validator(i);
-//   });
-//   if (errors.includes("len")) {
-//     let index = errors.indexOf("len");
-//     errors[index] = "number";
-//   }
-//   if (errors.includes("time")) {
-//     let index = errors.indexOf("time");
-//     errors[index] = "time";
-//   }
-//   if (errors.includes("calendar")) {
-//     let index = errors.indexOf("calendar");
-//     errors[index] = "date";
-//   }
-//   if (errors.length > 0) {
-//     let message_err = "something is wrong, please check ";
-//     for (let e = 0; errors.length > e; e++) {
-//       if (errors.length > 1) {
-//         if (errors[e + 1] !== undefined) {
-//           message_err = message_err + errors[e] + ", ";
-//         } else {
-//           message_err = message_err + "and " + errors[e] + ".";
-//           message_err = message_err.replace(", and", " and");
-//         }
-//       } else {
-//         message_err = message_err + errors[e] + ".";
-//       }
-//     }
-//     document.getElementById(
-//       "reject_content"
-//     ).innerHTML = `<p>${message_err}</p>`;
-//     document.getElementById("reject").classList.add("active-form");
-//   } else {
-//     document.getElementById("success").classList.add("active-form");
-//   }
-// });
-
-// document.getElementById("success_btn").addEventListener("click", () => {
-//   document.getElementById("success").classList.remove("active-form");
-// });
-
-// document.getElementById("reject_btn").addEventListener("click", () => {
-//   document.getElementById("reject").classList.remove("active-form");
-// });
-
-// let errors = [];
-
-// const validation = (error_id, value, type, len, name, required = false) => {
-//   if (required == true && value.length <= 0) {
-//     if (!errors.includes(name)) {
-//       errors.push(name);
-//     }
-//     document.getElementById(error_id).innerHTML = `The ${name} is required`;
-//     return;
-//   }
-//   if (error_id == "" || value == "" || type == "") {
-//     console.error("The iserted varaible are wrong");
-//   }
-//   if (type == "text") {
-//     if (required == true && (value == "" || value.length <= 0)) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(error_id).innerHTML = `The ${name} is required`;
-//     } else {
-//       if (len !== null && value.length <= len) {
-//         if (!errors.includes(name)) {
-//           errors.push(name);
-//         }
-//         document.getElementById(
-//           error_id
-//         ).innerHTML = `The ${name} most be longger`;
-//       } else {
-//         document.getElementById(error_id).innerHTML = ``;
-//       }
-//     }
-//   }
-//   if (type == "number") {
-//     if (isNaN(value) || (len !== null && value.length != len)) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//     } else {
-//       document.getElementById(error_id).innerHTML = "";
-//     }
-//   }
-//   if (type == "email") {
-//     if (
-//       value.length <= 0 ||
-//       value.indexOf("@") === -1 ||
-//       value.indexOf(".") === -1 ||
-//       value.endsWith(".")
-//     ) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//     } else {
-//       document.getElementById(error_id).innerHTML = "";
-//     }
-//   }
-//   if (type == "date") {
-//     console.log("here");
-//     let day = value.split("-")[2];
-//     let month = value.split("-")[1];
-//     let year = value.split("-")[0];
-//     if (year.length != 4) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//       return;
-//     }
-//     if (month.length != 2) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//       return;
-//     }
-//     if (day.length != 2) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//       return;
-//     }
-//     document.getElementById(error_id).innerHTML = "";
-//   }
-//   if (type == "time") {
-//     let houre = value.split(":")[0];
-//     let minutes = value.split(":")[1];
-//     if (isNaN(houre) || houre.length != 2 || houre > 23 || houre < 0) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//       return;
-//     }
-//     if (isNaN(minutes) || minutes.length != 2 || minutes > 59 || minutes < 00) {
-//       if (!errors.includes(name)) {
-//         errors.push(name);
-//       }
-//       document.getElementById(
-//         error_id
-//       ).innerHTML = `The ${name} is not available`;
-//       return;
-//     }
-//     document.getElementById(error_id).innerHTML = "";
-//     return;
-//   }
-// };
-
-// document.getElementById("submit-btn").addEventListener("click", () => {
-//   errors = [];
-//   let inputs = document.getElementsByClassName("validation");
-//   for (let i = 0; inputs.length > i; i++) {
-//     var event = new Event("input", {
-//       bubbles: true,
-//       cancelable: true,
-//     });
-//     inputs[i].dispatchEvent(event);
-//   }
-
-//   if (errors.length > 0) {
-//     let message_err = "something is wrong, please check ";
-//     for (let e = 0; errors.length > e; e++) {
-//       if (errors.length > 1) {
-//         if (errors[e + 1] !== undefined) {
-//           message_err = message_err + errors[e] + ", ";
-//         } else {
-//           message_err = message_err + "and " + errors[e] + ".";
-//           message_err = message_err.replace(", and", " and");
-//         }
-//       } else {
-//         message_err = message_err + errors[e] + ".";
-//       }
-//     }
-//     document.getElementById(
-//       "reject_content"
-//     ).innerHTML = `<p>${message_err}</p>`;
-//     document.getElementById("reject").classList.add("active");
-//   } else {
-//     document.getElementById("success").classList.add("active");
-//   }
-
-//   document.getElementById("success_btn").addEventListener("click", () => {
-//     document.getElementById("success").classList.remove("active");
-//   });
-
-//   document.getElementById("reject_btn").addEventListener("click", () => {
-//     document.getElementById("reject").classList.remove("active");
-//   });
-// });
-
-
+// next button action
+const nextButton = () => {
+  slider += 1;
+  if (slider > Object.keys(sliderContent).length) {
+    slider = 1;
+  }
+  switchSlider(slider);
+};
