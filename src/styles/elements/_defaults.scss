@@ -17,12 +17,9 @@ html {
 }
 
 body {
-  color: #ffffff;
-  background: #000000;
-}
-
-.main {
-  background-color: #000000;
+  color: $white;
+  background: $black;
+  position: relative;
 }
 
 h1,
@@ -31,12 +28,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "RobotoSlab";
+  font-family: $roboto;
 }
 
 p,
-span  {
-  font-family: "Catamaran";
+span {
+  font-family: $catamaran;
 }
 
 //  Removes input type number arrows
@@ -69,4 +66,22 @@ input::-webkit-datetime-edit-ampm-field {
   display: flex;
   align-items: center;
   letter-spacing: 0.02em;
+}
+
+// Content containers
+.container {
+  width: 100%;
+  max-width: 1208px;
+  margin: 0 auto;
+}
+
+.main-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: $black;
+}
+
+// Stop page scrolling when modal or burger menu is open
+.stop-scrolling {
+  overflow: hidden;
 }

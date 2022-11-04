@@ -60,72 +60,77 @@
   <!-- build:js scripts/vendor.min.js -->
   <!-- endbuild -->
 
-  <!-- hero section  -->
-  <section class="hero-section">
-    <div class="hero-wrapper container">
-      <header class="main-header">
-        <img class="main-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
-        <nav class="main-navbar nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#second-section" class="active">
-                WHY US
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#menu">
-                Menu
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#popular-dishes">
-                Popular dishes
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#booking">
-                Book
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <div class="nav__toggler">
-            <div class="bar bar-one"></div>
-            <div class="bar bar-two"></div>
-            <div class="bar bar-three"></div>
-          </div>
-        </nav>
-      </header>
-      <div class="hero-content">
-        <h1 class="hero-content__title">
-          Book a table in the best
-          Mexican restaturant
-        </h1>
-        <p class="hero-content__description">
-          30% off for the Christmas
-        </p>
-        <div class="hero-content__cta">
-          <a href="#booking" class="btn btn--inline button--secondary ">
-            Book now
+
+  <!-- header  -->
+  <header class="main-header">
+    <img class="main-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
+    <nav class="main-navbar nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#second-section" class="active">
+            Why us
           </a>
-          <a href="#menu" class="btn btn--inline  button--primary">
-            See Menu
+        </li>
+        <li class="nav__item">
+          <a href="#menu">
+            Menu
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#popular-dishes">
+            Popular dishes
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#booking">
+            Book
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="https://github.com/ellefamkar" rel="noreferrer noopener" target="_blank">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <div class="nav__toggler">
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main content container  -->
+  <main class="main-container">
+
+    <!-- hero section  -->
+    <section class="hero-section">
+      <div class="hero-wrapper container">
+        <div class="hero-content">
+          <h1 class="hero-content__title">
+            Book a table in the best
+            Mexican restaturant
+          </h1>
+          <p class="hero-content__description">
+            30% off for the Christmas
+          </p>
+          <div class="hero-content__cta">
+            <a href="#booking" class="button button--inline button--secondary ">
+              Book now
+            </a>
+            <a href="#menu" class="button button--inline  button--primary">
+              See Menu
+            </a>
+          </div>
+        </div>
+        <div class="to-bottom__arrow">
+          <a href="#menu" title="to bottom arrow">
+            <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
       </div>
-      <div class="to-bottom__arrow">
-        <a href="#menu" title="to bottom arrow">
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <main>
     <!-- menu section  -->
     <section class="menu-section container" id="menu">
       <div class="menu-section__container">
@@ -356,7 +361,7 @@
               <small id="len" class="form-text text-danger"></small>
             </div>
             <div class="form-group">
-              <button type="button" id="submit-btn" class="btn button--secondary btn--block">BOOK NOW</button>
+              <button type="button" id="submit-btn" class="button button--secondary button--block">BOOK NOW</button>
             </div>
           </form>
           <div class=" alert" id="success">
@@ -367,7 +372,7 @@
               <p>Success message.</p>
             </div>
             <div class="alert-footer">
-              <button type="button" class="btn btn-primary" id="success_btn">OK</button>
+              <button type="button" class="button button-primary" id="success_btn">OK</button>
             </div>
           </div>
           <div class="alert" id="reject">
@@ -378,17 +383,18 @@
 
             </div>
             <div class="alert-footer">
-              <button type="button" class="btn btn-danger" id="reject_btn">OK</button>
+              <button type="button" class="button button-modal btn-danger" id="reject_btn">OK</button>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    
   </main>
+
   <!-- footer  -->
   <footer>
-    <p>All rights are reserved for Mercadito Restaurant © 2019</p>
+    <p>All rights are reserved for Mercadito Restaurant © 2022</p>
   </footer>
 
   <!-- build:js scripts/main.min.js -->

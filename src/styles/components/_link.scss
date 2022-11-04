@@ -1,4 +1,16 @@
-// TAP TO BOTTOM LINK (ONLY AVAILABLE IN TABLET VERSION)
+// ANCHOR TAGS DEFAULT
+a {
+  text-decoration: none;
+
+  &:-webkit-any-link:focus-visible {
+    outline-offset: 0;
+  }
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+// TAP TO BOTTOM - LINK (ONLY AVAILABLE IN TABLET VERSION FOR CURRENT DESIGN)
 .to-bottom__arrow {
   width: 62px;
   height: 62px;
@@ -8,16 +20,16 @@
   bottom: 5%;
   background: $black-opacity;
   color: $white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 
   a {
     font-size: 26px;
     color: $white;
+  }
 
-    &:hover {
-      opacity: $opacity;
-    }
+  @include mq(md, lg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

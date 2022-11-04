@@ -11,7 +11,7 @@ $gray-dark: #181110;
 $white-high-opacity: #ffffff33;
 $white-medium-opacity: #ffffff1a;
 $white: #ffffff;
-$black-opacity :rgba(0, 0, 0, 0.8);
+$black-opacity: rgba(0, 0, 0, 0.8);
 $black: #000000;
 
 //opacity
@@ -29,5 +29,11 @@ $text-shadow-light: 0px 5px 8px rgba(0, 0, 0, 0.3);
 $text-shadow-medium: 0px 2px 8px rgba(0, 0, 0, 0.4);
 
 //text transform
-
 $capitalize: capitalize;
+$uppercase: uppercase;
+
+// cursor format
+$pointer: pointer;
+
+// animation
+$transition: all 0.6s ease-out;

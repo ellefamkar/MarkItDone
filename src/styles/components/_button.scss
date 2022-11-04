@@ -1,35 +1,36 @@
-.btn {
-  font-family: "Catamaran";
+.button {
+  font-family: $catamaran;
   box-shadow: $box-shadow;
   font-size: 22px;
   font-weight: 300;
   line-height: 36px;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 3px;
-  text-decoration: none;
   padding: 9px 49px;
   margin: 0.5rem 1.5rem;
-  cursor: pointer;
+  cursor: $pointer;
   outline: 0;
   border: 0;
   white-space: nowrap;
   transition: all 200ms ease-in-out;
 
   &:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
+    opacity: $opacity;
   }
 }
 
-.btn--block {
+.button--block {
   width: 100%;
   font-size: 1.2rem;
   margin: 0;
 }
 
-.btn--inline {
+.button--inline {
   width: 220px;
   justify-content: center;
 }
@@ -42,4 +43,11 @@
 .button--secondary {
   color: $white;
   background-color: $secondary-color-dark;
+}
+
+.button--modal {
+  color: $white;
+  background: $primary-color;
+  box-shadow: $box-shadow;
+  border-radius: 6.28148px;
 }
