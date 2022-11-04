@@ -147,8 +147,14 @@
       background: $alert-gray-dark;
       border: 2px solid $alert-gray-medium;
       i {
-        color: #e5c680;
-        font-size: 36px;
+        font-size: 50px;
+        font-weight: 200;
+        &.fa-times {
+          color: $reject;
+        }
+        &.fa-check {
+          color: $success;
+        }
       }
     }
   }

@@ -365,7 +365,7 @@
                   </div>
                 </div>
               </div>
-              <small id="len" class="form-text text-danger"></small>
+              <small id="length" class="form-text text-danger"></small>
             </div>
             <div class="form-group">
               <button type="button" id="submit-button" class="button button--secondary button--block">BOOK NOW</button>
@@ -382,28 +382,29 @@
     <p>All rights are reserved for Mercadito Restaurant © 2022</p>
   </footer>
 
-  <!-- booking alerts  modal -->
-  <!-- alerts container  -->
+  <!-- booking alert modal -->
   <div class="alert-container">
+
     <!-- Success alert  -->
     <div class="alert" id="success">
       <div class="alert-header">
         <div class="alert-header__icon">
-          <i class="fa-solid fa-arrow-down"></i>
+          <i class="fa-solid fa-check"></i>
         </div>
       </div>
       <div class="alert-content" id="success_content">
         <h3>Thank You.</h3>
-        <p>Your reservasion has bee received, we’ll be happy to see you.</p>
+        <p>Your reservasion has bee received, we'll be happy to see you.</p>
       </div>
       <div class="alert-footer">
         <button type="button" class="button button--block button--primary" id="success--button">OK</button>
       </div>
     </div>
+
     <!-- reject alert  -->
     <div class="alert" id="reject">
       <div class="alert-header__icon">
-        <i class="fa-solid fa-arrow-up"></i>
+        <i class="fa-solid fa-times"></i>
       </div>
       <div class="alert-content" id="reject_content">
         <h3>We've a Problem</h3>
@@ -414,14 +415,16 @@
       </div>
     </div>
   </div>
+
   <!-- build:js scripts/main.min.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
   <script>
 
+    // FORM SUBMISSION VALIDATION
     let errors = [];
 
-    const validation = (error_id, value, type, len, name, required = false) => {
+    const validation = (error_id, value, type, length, name, required = false) => {
       if (required == true && value.length <= 0) {
         if (!errors.includes(name)) {
           errors.push(name);
@@ -429,6 +432,7 @@
         document.getElementById(error_id).innerHTML = `The ${name} is required`;
         return;
       }
+
       if (error_id == '' || value == '' || type == '') {
         console.error('The iserted varaible are wrong');
       }
@@ -450,7 +454,7 @@
         }
       }
       if (type == 'number') {
-        if (isNaN(value) || (len !== null && value.length != len)) {
+        if (isNaN(value) || (length !== null && value.length != length)) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
