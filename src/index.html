@@ -295,8 +295,8 @@
           </p>
         </div>
         <div class="booking-section__form-container">
-          <form class="form">
 
+          <form class="form" id="form">
             <!-- name  -->
             <div class="form-group">
               <label for="firstname">Your Name</label>
@@ -368,7 +368,7 @@
               <small id="length" class="form-text text-danger"></small>
             </div>
             <div class="form-group">
-              <button type="button" id="submit-button" class="button button--secondary button--block">BOOK NOW</button>
+              <button type="submit" id="submit-button" class="button button--secondary button--block">BOOK NOW</button>
             </div>
           </form>
         </div>
@@ -414,6 +414,7 @@
         <button type="button" class="button button--block button--primary" id="reject--button">OK</button>
       </div>
     </div>
+
   </div>
 
   <!-- build:js scripts/main.min.js -->
@@ -422,161 +423,174 @@
   <script>
 
     // FORM SUBMISSION VALIDATION
+
     let errors = [];
 
     const validation = (error_id, value, type, length, name, required = false) => {
-      if (required == true && value.length <= 0) {
+      document.getElementById(error_id).innerHTML = "";
+
+      if (required && value.length <= 0) {
         if (!errors.includes(name)) {
           errors.push(name);
         }
-        document.getElementById(error_id).innerHTML = `The ${name} is required`;
+        document.getElementById(error_id).innerHTML = `Your ${name} is required`;
         return;
       }
 
-      if (error_id == '' || value == '' || type == '') {
-        console.error('The iserted varaible are wrong');
-      }
-      if (type == 'text') {
-        if (required == true && (value == '' || value.length <= 0)) {
+      if (type === "text") {
+        if (required && (value == "" || value.length <= 0)) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is required`;
+          document.getElementById(error_id).innerHTML = `Your ${name} is required`;
         } else {
-          if (len !== null && value.length <= len) {
+          if (length !== null && value.length <= length) {
             if (!errors.includes(name)) {
               errors.push(name);
             }
-            document.getElementById(error_id).innerHTML = `The ${name} most be longger`;
+            document.getElementById(error_id).innerHTML = `Your ${name} is too short!`;
           } else {
-            document.getElementById(error_id).innerHTML = ``;
+            document.getElementById(error_id).innerHTML = "";
           }
         }
       }
-      if (type == 'number') {
+
+      if (type === "number") {
         if (isNaN(value) || (length !== null && value.length != length)) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `Your ${name} is not available`;
         } else {
-          document.getElementById(error_id).innerHTML = '';
+          document.getElementById(error_id).innerHTML = "";
         }
       }
-      if (type == 'email') {
+
+      if (type === "email") {
         if (value.length <= 0 || value.indexOf("@") === -1 || value.indexOf(".") === -1 || value.endsWith('.')) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `Provide a valid ${name} !`;
         } else {
-          document.getElementById(error_id).innerHTML = '';
+          document.getElementById(error_id).innerHTML = "";
         }
       }
-      if (type == 'date') {
-        console.log('here');
+
+      if (type === "date") {
+
         let day = value.split('-')[2];
         let month = value.split('-')[1];
         let year = value.split('-')[0];
-        if (year.length != 4) {
+
+        if (year.length !== 4) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `This ${name} is not available`;
           return;
         }
-        if (month.length != 2) {
+        if (month.length !== 2) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `This ${name} is not available`;
           return;
         }
-        if (day.length != 2) {
+        if (day.length !== 2) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `This ${name} is not available`;
           return;
         }
-        document.getElementById(error_id).innerHTML = '';
+        document.getElementById(error_id).innerHTML = "";
       }
-      if (type == 'time') {
+
+      if (type == "time") {
+
         let houre = value.split(':')[0];
         let minutes = value.split(':')[1];
+
         if (isNaN(houre) || houre.length != 2 || houre > 23 || houre < 0) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `This ${name} is not available`;
           return;
         }
         if (isNaN(minutes) || minutes.length != 2 || minutes > 59 || minutes < 00) {
           if (!errors.includes(name)) {
             errors.push(name);
           }
-          document.getElementById(error_id).innerHTML = `The ${name} is not available`;
+          document.getElementById(error_id).innerHTML = `This ${name} is not available`;
           return;
         }
-        document.getElementById(error_id).innerHTML = '';
+        document.getElementById(error_id).innerHTML = "";
         return;
       }
 
     }
 
+    const submitForm = document.querySelector("#form");
+    submitForm.addEventListener("submit", (event) => {
 
-    document.getElementById('submit-button').addEventListener('click', () => {
+      event.preventDefault();
       errors = [];
-      let inputs = document.getElementsByClassName('validation');
-      for (let i = 0; inputs.length > i; i++) {
-        var event = new Event('input', {
+
+      let inputs = document.querySelectorAll(".validation");
+      let reject = document.querySelector("#reject");
+      let success = document.querySelector("#success");
+      let alertContainer = document.querySelector(".alert-container");
+      let errorMessage = "";
+
+      inputs.forEach((e) => {
+        let event = new Event('input', {
           bubbles: true,
           cancelable: true,
         });
-        inputs[i].dispatchEvent(event);
-      }
-      console.log(document.getElementById('success'));
+        e.dispatchEvent(event);
+      })
+
       if (errors.length > 0) {
-        let message_err = 'something is wrong, please check ';
         for (let e = 0; errors.length > e; e++) {
           if (errors.length > 1) {
             if (errors[e + 1] !== undefined) {
-              message_err = message_err + errors[e] + ', ';
+              errorMessage = ` ${errorMessage} ${errors[e]} .`;
             } else {
-              message_err = message_err + 'and ' + errors[e] + '.';
-              message_err = message_err.replace(', and', ' and');
+              errorMessage = ` ${errorMessage} and ${errors[e]} .`;
             }
           } else {
-            message_err = message_err + errors[e] + '.';
+            errorMessage = ` ${errorMessage} ${errors[e]} .`;
           }
         }
-        // document.getElementById('reject_content').innerHTML = `<p>${message_err}</p>`;
-        document.getElementById('reject').classList.add('active-form');
-        let alertContainer = document.querySelector(".alert-container");
+
+        reject.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
         alertContainer.classList.toggle("stop-scrolling");
+
       } else {
-        document.getElementById('success').classList.add('active-form');
-        let alertContainer = document.querySelector(".alert-container");
+
+        success.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
         alertContainer.classList.toggle("stop-scrolling");
       }
 
-      document.getElementById('success--button').addEventListener('click', () => {
-        document.getElementById('success').classList.remove('active-form');
-        let alertContainer = document.querySelector(".alert-container");
-        alertContainer.classList.toggle("stop-scrolling");
-        alertContainer.classList.toggle("toggle-form-alert");
+      let successButton = document.querySelector("#success--button");
+      successButton.addEventListener("click", () => {
+        success.classList.remove("active-form");
+        alertContainer.classList.add("stop-scrolling");
+        alertContainer.classList.remove("toggle-form-alert");
       });
 
-      document.getElementById('reject--button').addEventListener('click', () => {
-        document.getElementById('reject').classList.remove('active-form');
-        let alertContainer = document.querySelector(".alert-container");
-        alertContainer.classList.toggle("stop-scrolling");
-        alertContainer.classList.toggle("toggle-form-alert");
+      let rejectButton = document.querySelector("#reject--button");
+      rejectButton.addEventListener("click", () => {
+        reject.classList.remove("active-form");
+        alertContainer.classList.add("stop-scrolling");
+        alertContainer.classList.remove("toggle-form-alert");
       });
+
     });
-
   </script>
 </body>
 

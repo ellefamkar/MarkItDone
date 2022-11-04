@@ -74,26 +74,26 @@
 
 // POPULAR DISHES SLIDER
 const sliderContent = {
-  1: {
-    url: "images/slider/slide-1.webp",
-    title: "Sweet and sour pork",
-    description:
+  '1': {
+    'url': "images/slider/slide-1.webp",
+    'title': "Sweet and sour pork",
+    'description':
       "Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the main material of this dish. <br /> The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate people appetite.",
-    price: "36",
+    'price': "36",
   },
-  2: {
-    url: "images/slider/slider-2.webp",
-    title: "Pork Wontons",
-    description:
+  '2': {
+    'url': "images/slider/slider-2.webp",
+    'title': "Pork Wontons",
+    'description':
       "There are no rules when it comes to dipping sauces for pork wontons. Go with what you like. <br /> I looooove pairing it with a gingery, vinegary based dipping sauce with a hint of sesame oil. ",
-    price: "54",
+    'price': "54",
   },
-  3: {
-    url: "images/slider/slider-3.webp",
-    title: "Sweet and sour pork",
-    description:
+  '3': {
+    'url': "images/slider/slider-3.webp",
+    'title': "Sweet and sour pork",
+    'description':
       'This savory pepper steak sauce has a combination of beef and chicken broth which adds depth of flavor. <br /> Soy sauce and hot sauce enhance the other flavors in the dish, and just a touch of hot sauce is used, which doesn"t make it spicy.',
-    price: "12",
+    'price': "12",
   },
 };
 
@@ -116,9 +116,7 @@ const switchSlider = (pageNumber = 1) => {
             </div>
         `;
 
-  let number = `<span class="active-slider">${pageNumber} &nbsp </span> <span class="deactive-slider"> /  &nbsp ${
-    Object.keys(sliderContent).length
-  }</span>`;
+  let number = `<span class="active-slider">${pageNumber} &nbsp </span> <span class="deactive-slider"> /  &nbsp ${Object.keys(sliderContent).length}</span>`;
   let slideNumber = document.querySelector("#slider_number");
   slideNumber.innerHTML = number;
 
