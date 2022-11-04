@@ -22,7 +22,7 @@ body {
 }
 
 .main {
-  background-color: #fff;
+  background-color: #000000;
 }
 
 h1,
@@ -34,7 +34,8 @@ h6 {
   font-family: "RobotoSlab";
 }
 
-p {
+p,
+span  {
   font-family: "Catamaran";
 }
 
@@ -45,8 +46,11 @@ input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
 }
+
 input[type="number"] {
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 //Removes AM/PM in input type data

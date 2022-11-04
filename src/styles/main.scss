@@ -19,6 +19,14 @@
 @import "objects/_row.scss";
 @import "objects/_section.scss";
 
+
+//FONTS
+// importing core styling file
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
+@import "./fontawesome/brands.scss";
+
+
 // COMPONENTS
 //
 // Build and include your project’s UI components here.
@@ -31,10 +39,10 @@
 
 // PARTIALS
 @import "partials/_header.scss";
-@import "partials/_form.scss";
-@import "partials/_footer.scss";
 @import "partials/_menu.scss";
 @import "partials/_slider.scss";
+@import "partials/_form.scss";
+@import "partials/_footer.scss";
 
 // UTILITIES
 @import "utilities/_flex.scss";
@@ -49,6 +57,10 @@
   margin: 0 auto;
 }
 
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 // Stop page scrolling when modal or burger menu is open
 .stop-scrolling {
   overflow: hidden;

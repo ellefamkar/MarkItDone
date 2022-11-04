@@ -1,4 +1,3 @@
-
 //  SLIDER
 
 .slider {
@@ -184,17 +183,17 @@
   }
 }
 
-@media (992px <= width <= 1199px) {
-  .slider {
-    &__content-img {
-      width: 400px;
-      height: auto;
-      margin-bottom: 0rem;
+// @media (992px <= width <= 1199px) {
+//   .slider {
+//     &__content-img {
+//       width: 400px;
+//       height: auto;
+//       margin-bottom: 0rem;
 
-      img {
-        width: 400px !important;
-        max-width: 400px;
-      }
-    }
-  }
-}
+//       img {
+//         width: 400px !important;
+//         max-width: 400px;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,23 @@
+// TAP TO BOTTOM LINK (ONLY AVAILABLE IN TABLET VERSION)
+.to-bottom__arrow {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  position: absolute;
+  left: 45%;
+  bottom: 5%;
+  background: $black-opacity;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    font-size: 26px;
+    color: $white;
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}
