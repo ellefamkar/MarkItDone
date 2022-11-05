@@ -1,3 +1,5 @@
+// BUTTON
+
 .button {
   @include buttonDefault;
 
@@ -19,18 +21,14 @@
 }
 
 .button--primary {
-  color: $white;
-  background: $primary-color;
+  @include colorPattern($white, $primary-color, unset);
 }
 
 .button--secondary {
-  color: $white;
-  background-color: $secondary-color-dark;
+  @include colorPattern($white, $secondary-color-dark, unset);
 }
 
 .button--modal {
-  color: $white;
-  background: $primary-color;
-  box-shadow: $box-shadow;
+  @include colorPattern($white, $primary-color, $box-shadow);
   border-radius: 6.28148px;
 }

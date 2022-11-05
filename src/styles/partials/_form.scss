@@ -8,29 +8,19 @@
   }
 
   label {
-    text-transform: uppercase;
-    font-family: $catamaran;
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 120%;
+    @include  textStyle(18px, 200, $gray-extra-light, $catamaran, 120%, 0.02em, none, $uppercase);
     display: flex;
     align-items: center;
-    letter-spacing: 0.02em;
-    text-transform: $uppercase;
-    color: $gray-extra-light;
     margin-bottom: 0.5rem;
   }
 
   input {
-    font-family: $catamaran;
-    color: $white;
-    font-weight: 100;
-    font-size: 18px;
+    @include  textStyle(18px, 100, $white, $catamaran, 120%, 0.02em, none, $uppercase);
+    @include colorPattern($white, $white-medium-opacity, unset) ;
     display: block;
     outline: 0;
     width: 100%;
     height: 49px;
-    background: $white-medium-opacity;
     border: 1px solid $white-high-opacity;
     padding: 0.7rem;
 
@@ -45,14 +35,13 @@
   //Counter Box
 
   .counter-container {
-    color: $gray-extra-light;
+    @include  colorPattern($gray-extra-light, $white-medium-opacity, unset);
     display: flex;
     align-items: center;
     justify-content: space-between;
     outline: 0;
     width: 100%;
     height: 49px;
-    background: $white-medium-opacity;
     border: 1px solid $white-high-opacity;
     padding: 0.7rem 1rem;
 
@@ -69,21 +58,15 @@
     }
 
     input {
-      color: $gray-extra-light;
-      font-weight: 400;
+      @include  textStyle(22px, 400, $gray-extra-light, inherit, 120%,  0.02em, none, none);
+      @include colorPattern($gray-extra-light, transparent, transparent) ;
       width: 50px;
-      font-size: 22px;
       height: 100%;
-      line-height: 120%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: transparent;
       border: transparent;
       z-index: 1;
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.02em;
     }
   }
 }
@@ -118,12 +101,11 @@
 }
 
 .alert {
-  color: $white;
+  @include colorPattern($white, $gray-dark, unset) ;
   width: 90%;
   max-width: 431px;
   height: auto;
   text-align: center;
-  background-color: $gray-dark;
   display: none;
   padding: 2rem;
   z-index: 1000;
@@ -141,11 +123,13 @@
       align-items: center;
       background: $alert-gray-dark;
       border: 2px solid $alert-gray-medium;
+
       i {
         font-size: 50px;
         font-weight: 200;
+
         &.fa-times {
-          color: $reject;
+          color: $fail;
         }
         &.fa-check {
           color: $success;
@@ -157,11 +141,7 @@
     margin: 2rem auto;
 
     h3 {
-      color: $white;
-      font-family: $roboto;
-      font-weight: 300;
-      font-size: 26px;
-      line-height: 201.87%;
+      @include textStyle(26px, 300,  $white, $roboto, 201.87%, none, none, none);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -170,12 +150,8 @@
     }
 
     p {
-      color: $gray-extra-light;
-      font-family: $catamaran;
+      @include textStyle(18px, 200, $gray-extra-light, $catamaran, 140.4%, none, none, none);
       font-style: normal;
-      font-weight: 200;
-      font-size: 18px;
-      line-height: 140.4%;
       text-align: center;
     }
   }

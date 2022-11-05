@@ -12,13 +12,14 @@
     cursor: $pointer;
 
     .bar {
-      width: 25px;
+     width: 34px;
       height: 3px;
       background-color: $white;
-      margin: 5px 0;
+      margin: 6px 0;
       border-radius: 5px;
       transition: $transition;
     }
+
   }
 
   &.nav__expanded {
@@ -49,16 +50,13 @@
     transition: $transition;
 
     .nav__item {
+      
       a {
-        color: $white;
-        font-weight: 200;
-        font-size: 22px;
-        text-transform: $uppercase;
+        @include textStyle(22px, 200, $white, $catamaran, 42px, none, none, $uppercase);
         text-decoration: none;
-        line-height: 42px;
         text-align: left;
         display: block;
-        margin: 1rem auto;
+        margin: 1.2rem auto;
 
         &.active {
           color: $secondary-color-light;
@@ -84,7 +82,7 @@
     display: flex;
     align-items: start;
     justify-content: center;
-    padding: 3rem;
+    padding: 48px 64px;
     z-index: 1;
   }
 }

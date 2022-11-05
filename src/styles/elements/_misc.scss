@@ -1,15 +1,9 @@
 ::selection {
-  background: $secondary-color-dark;
-  color: #fff;
-  text-shadow: none;
+  @include colorPattern($white, $secondary-color-dark, unset);
 }
 ::-moz-selection {
-  background: $secondary-color-dark;
-  color: #fff;
-  text-shadow: none;
+  @include colorPattern($white, $secondary-color-dark, unset);
 }
 ::-webkit-selection {
-  background: $secondary-color-dark;
-  color: #fff;
-  text-shadow: none;
+  @include colorPattern($white, $secondary-color-dark, unset);
 }

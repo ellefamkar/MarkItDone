@@ -27,12 +27,12 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH WIDTH >= 768PX
 @include mq(md) {
-
   //HEADER
   .main-header {
     top: 1%;
     flex-direction: column;
     align-items: center;
+
     &__logo {
       width: 237px;
       height: 130px;
@@ -60,7 +60,6 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH 768PX <= WIDTH  < 992PX
 @include mq(md, lg) {
-
   // NAVBAR
   .main-navbar {
     margin-top: 2rem;
@@ -98,8 +97,9 @@ $mq-breakpoints: (
             &::after {
               content: "";
               display: block;
-              border-top: 0.3rem solid $secondary-color-dark;
-              width: 3rem;
+              border-top: 0.2rem solid $secondary-color-dark;
+              width: 4rem;
+              height: 2px;
               margin: 0 auto;
               -webkit-transform: translateY(1.5rem);
               transform: translateY(0.2rem);
@@ -117,19 +117,23 @@ $mq-breakpoints: (
     height: 100vh;
   }
 
-  .hero-content {
-    &__title {
-      width: auto;
-      max-width: 584px;
-      margin: 2rem auto 1rem auto;
-      font-size: 52px;
-    }
-    &__description {
-      font-size: 23px;
-      margin-bottom: 3rem;
-    }
-    &__cta {
-      flex-direction: row;
+  .hero-wrapper {
+    .hero-content {
+      &__title {
+        width: auto;
+        max-width: 584px;
+        margin: 2rem auto 1rem auto;
+        font-size: 52px;
+      }
+
+      &__description {
+        font-size: 25px;
+        margin: 0.7rem auto 3rem auto;
+      }
+
+      &__cta {
+        flex-direction: row;
+      }
     }
   }
 
@@ -150,11 +154,13 @@ $mq-breakpoints: (
       padding: 65px 40px;
       // max-width: 670px;
     }
+
     &__title {
       color: #fff;
       font-size: 40px;
       line-height: 48px;
     }
+
     &__description {
       font-size: 24px;
       line-height: 130%;
@@ -234,6 +240,7 @@ $mq-breakpoints: (
     &__header {
       flex-direction: column;
     }
+
     &__content {
       width: 100%;
       max-width: 647px;
@@ -268,7 +275,6 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH 992PX <= WIDTH  < 1300PX
 @include mq(lg, wide) {
-
   // POPULAR DISHES SECTION
   .popular-dishes {
     &__content {
@@ -333,11 +339,13 @@ $mq-breakpoints: (
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       & > span {
         font-size: 21px;
         padding: 0 0.5rem;
         line-height: 39px;
       }
+
       img {
         width: 30px;
       }
@@ -347,7 +355,6 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH 992PX <= WIDTH
 @include mq(lg) {
-
   //HEADER
   .main-header {
     align-items: end;
@@ -411,19 +418,23 @@ $mq-breakpoints: (
     height: 956px;
     padding: 3rem;
   }
-  .hero-content {
-    &__title {
-      width: auto;
-      max-width: 584px;
-      margin: 2rem auto 1rem auto;
-      font-size: 52px;
-    }
-    &__description {
-      font-size: 23px;
-      margin-bottom: 3rem;
-    }
-    &__cta {
-      flex-direction: row;
+  .hero-wrapper {
+    .hero-content {
+      &__title {
+        width: auto;
+        max-width: 584px;
+        margin: 2rem auto 1rem auto;
+        font-size: 52px;
+      }
+
+      &__description {
+        font-size: 23px;
+        margin-bottom: 3rem;
+      }
+
+      &__cta {
+        flex-direction: row;
+      }
     }
   }
 
@@ -438,6 +449,7 @@ $mq-breakpoints: (
       padding: 64px;
       margin: 0.5rem 0;
     }
+
     &__content-container {
       width: 100%;
       max-width: 1200px;
@@ -447,6 +459,7 @@ $mq-breakpoints: (
       justify-content: space-between;
       align-items: flex-start;
     }
+
     &__title {
       color: $white;
       font-weight: 400;
@@ -463,6 +476,7 @@ $mq-breakpoints: (
         margin: 0;
       }
     }
+
     &__description {
       color: $white;
       font-size: 20px;
@@ -551,6 +565,7 @@ $mq-breakpoints: (
         margin: 0.2rem 0;
       }
     }
+
     &__content {
       display: block;
       height: auto;
@@ -615,11 +630,13 @@ $mq-breakpoints: (
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       & > span {
         font-size: 21px;
         padding: 0 0.5rem;
         line-height: 39px;
       }
+
       img {
         width: 30px;
       }
@@ -629,7 +646,6 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH 1300PX <= WIDTH
 @include mq(wide) {
-  
   // POPULAR DISHES SECTION
   .popular-dishes {
     &__content {

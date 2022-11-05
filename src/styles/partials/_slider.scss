@@ -25,11 +25,7 @@
     }
 
     &-title {
-      color: $white;
-      font-family: $roboto;
-      font-weight: 400;
-      font-size: 30px;
-      line-height: 40px;
+      @include textStyle(30px, 400, $white, $roboto, 40px, none, none, none);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,20 +33,13 @@
     }
 
     &-description {
-      color: $gray-light;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 130%;
+      @include textStyle(20px, 400, $gray-light, inherit, 130%, none, none, none);
       text-align: center;
       margin: 2rem auto;
     }
 
     &-price {
-      color: $white;
-      font-family: $catamaran;
-      font-weight: 500;
-      font-size: 30px;
-      line-height: 130%;
+      @include textStyle(30px, 500, $white, $catamaran,130%, none, none, none);
       text-align: center;
     }
   }
@@ -65,11 +54,8 @@
     }
 
     & > span {
-      font-family: $catamaran;
-      font-size: 23px;
-      font-weight: 200;
+      @include textStyle(23px, 200, $white, $catamaran, 39px, none, none, none);
       padding: 0 1.4rem;
-      line-height: 39px;
       text-align: center;
     }
   }

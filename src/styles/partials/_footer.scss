@@ -3,11 +3,9 @@
 footer {
   text-align: center;
   padding: 40px 0;
+
   p {
-    color: $gray-extra-light;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 120%;
+    @include textStyle(18px, 200, $gray-extra-light, $catamaran, 120%, none, unset, none);
     width: auto;
     max-width: 312px;
     margin: 0 auto;

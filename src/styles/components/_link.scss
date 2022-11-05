@@ -17,10 +17,9 @@ a {
   border-radius: 50%;
   position: absolute;
   left: 45%;
-  bottom: 5%;
-  background: $black-opacity;
-  color: $white;
+  bottom: 10%;
   display: none;
+  @include colorPattern($white, $black-opacity, unset);
 
   a {
     font-size: 26px;

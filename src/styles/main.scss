@@ -78,26 +78,18 @@
     margin-top: 2rem;
 
     &__title {
-      color: $white;
-      font-size: 35px;
-      font-weight: 500;
-      line-height: 120%;
+      @include textStyle(35px, 500, $white, $roboto, 120%, none, $text-shadow-medium, none);
       text-align: center;
-      text-shadow: $text-shadow-medium;
       margin: 0 auto 1rem;
       width: auto;
       max-width: 312px;
     }
 
     &__description {
-      color: $white;
-      font-size: 19px;
-      font-weight: 100;
-      line-height: 39px;
+      @include textStyle(19px, 100, $white, inherit, 39px, none, 0px 4px 4px rgba(0, 0, 0, 0.25), none);
       opacity: 0.9;
       text-align: center;
       margin-bottom: 5rem;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
     &__cta {
@@ -120,13 +112,29 @@
   flex-direction: column;
   align-items: center;
 
+  &__form-container {
+      @include colorPattern($gray-extra-light, $gray-dark, $box-shadow-dark);
+      width: 100%;
+      max-width: 463px;
+      margin: 0.5rem auto 0;
+      padding: 65px 25px;
+      border-radius: $border-radius;
+      border: 1px solid $gray-light-opacity;
+
+      input{
+        text-transform: none;
+        color: $gray-extra-light;
+
+        &::placeholder{
+          color: transparent;
+          text-transform: none;
+        }
+      }
+    }
+
   &__title {
-    color: $white;
-    font-weight: 400;
-    font-size: 34px;
-    line-height: 120%;
+    @include textStyle(34px, 400, $white, $roboto, 120%, none,  $text-shadow-light, none);
     text-align: center;
-    text-shadow: $text-shadow-light;
     margin: 3rem auto;
     width: -moz-fit-content;
     width: fit-content;
@@ -143,27 +151,12 @@
   }
 
   &__description {
-    color: $white;
-    font-weight: 200;
-    font-size: 21px;
-    line-height: 140%;
+    @include textStyle( 21px, 200, $white, $catamaran, 140%, none, $text-shadow-light, none);
     text-align: center;
-    text-shadow: $text-shadow-light;
     margin: 1rem auto 4rem auto;
     padding: 0.5rem 1rem;
     width: auto;
     max-width: 376px;
-  }
-
-  &__form-container {
-    width: 100%;
-    max-width: 463px;
-    margin: 0.5rem auto 0;
-    padding: 65px 25px;
-    border-radius: $border-radius;
-    border: 1px solid $gray-light-opacity;
-    background-color: $gray-dark;
-    box-shadow: $box-shadow-dark;
   }
 }
 
@@ -186,10 +179,7 @@
   }
 
   .menu__title {
-    color: $white;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 45px;
+    @include  textStyle( 33px, 400, $white, $roboto, 45px, none, unset, none);
     text-align: center;
     margin-bottom: 3.5rem;
 
@@ -205,12 +195,7 @@
   }
 
   .menu__tabs {
-    font-family: "Catamaran";
-    font-weight: 200;
-    font-size: 24px;
-    line-height: 39px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    @include  textStyle(24px, 200, $white, $catamaran, 39px, 0.02em, unset, uppercase);
     text-align: center;
     margin-bottom: 2rem;
     display: flex;
@@ -272,30 +257,19 @@
       }
 
       &__title {
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 32px;
-        text-transform: $capitalize;
+        @include textStyle(24px, 400, $white, $roboto, 32px, none, unset, $capitalize);
         margin-bottom: 1rem;
       }
 
       &__ingredient {
-        color: $gray-medium;
+        @include textStyle(21px, 200, $gray-medium, $catamaran, 140%, none, unset, $capitalize);
         opacity: $opacity;
-        font-weight: 200;
-        font-size: 21px;
-        line-height: 140%;
         text-align: center;
-        text-transform: $capitalize;
         margin-bottom: 1rem;
       }
 
       &__price {
-        color: $gray-extra-light;
-        font-family: "Catamaran";
-        font-weight: 400;
-        font-size: 26px;
-        line-height: 43px;
+        @include textStyle(26px, 400, $gray-extra-light, $catamaran, 43px, none, unset, none);
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -329,10 +303,7 @@
   }
 
   &__title {
-    color: $white;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 45px;
+    @include textStyle(32px, 400, $white, $roboto, 45px, none, unset, none);
     text-align: center;
     margin-bottom: 3.5rem;
 

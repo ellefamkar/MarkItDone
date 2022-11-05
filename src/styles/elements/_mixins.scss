@@ -18,20 +18,28 @@
   align-items: center;
 }
 
-@mixin textStyle($size, $weight, $color, $line-hight, $letter-spacing,$family) {
+@mixin colorPattern($color, $background-color, $box-shadow) {
+  color: $color;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+}
+
+@mixin textStyle($size,$weight,$color, $family, $line-hight, $letter-spacing,$text-shadow,$text-transform) {
   font-size: $size;
   font-weight: $weight;
   color: $color;
   line-height: $line-hight;
   letter-spacing: $letter-spacing;
   font-family: $family;
+  text-shadow: $text-shadow;
+  text-transform: $text-transform;
 }
 
 // default button styles
 @mixin buttonDefault {
   font-family: $catamaran;
   box-shadow: $box-shadow;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 300;
   line-height: 36px;
   text-decoration: none;
