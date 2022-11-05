@@ -1,3 +1,4 @@
+//RESET STYLES
 *,
 *::before,
 *::after {
@@ -10,7 +11,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 html {
 
@@ -29,7 +29,6 @@ html {
   }
   scroll-behavior: smooth;
 }
-
 
 body {
   @include colorPattern($white, $black, unset);
@@ -50,33 +49,35 @@ span {
   font-family: $catamaran;
 }
 
-//  Removes input type number arrows
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
+//REMOVES INPUT TYPE 'NUMBER' DEFAULT ARROWS
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  //REMOCES AM/PM IN INPUT 'DATE' TYPE
+  &::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
 }
 
-input[type="number"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-//Removes AM/PM in input type data
-input::-webkit-datetime-edit-ampm-field {
-  display: none;
-}
-
-//  Default style for input placeholders
+// DEFAULT STYLE FOR INPUT PLACEHOLDERS
 ::placeholder {
   @include textStyle(22px, 400, transparet, $catamaran, 120%, 0.02em, none, none);
   display: flex;
   align-items: center;
 }
 
-// Content containers
+// CONTENT CONTAINER
 .container {
   width: 100%;
   max-width: 1208px;
@@ -89,12 +90,12 @@ input::-webkit-datetime-edit-ampm-field {
   @include colorPattern($white, $black, unset);
 }
 
-// Stop page scrolling when modal or burger menu is open
+//STOPS PAGE FROM SCROLLING WHEN MODALS, BURGER MENU ETC. ARE OPEN
 .stop-scrolling {
   overflow: hidden;
 }
 
-//margin and padding classes
+// MARGIN AND PADDING CLASSES
 $spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8);
 @each $space in $spaceamounts {
   .m-#{$space} {

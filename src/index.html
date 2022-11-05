@@ -542,6 +542,7 @@
       let reject = document.querySelector("#reject");
       let success = document.querySelector("#success");
       let alertContainer = document.querySelector(".alert-container");
+      let htmlDoc = document.querySelector("html");
       let errorMessage = "";
 
       inputs.forEach((e) => {
@@ -568,12 +569,14 @@
         reject.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
         alertContainer.classList.toggle("stop-scrolling");
+        htmlDoc.classList.toggle("stop-scrolling");
 
       } else {
 
         success.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
         alertContainer.classList.toggle("stop-scrolling");
+        htmlDoc.classList.toggle("stop-scrolling");
       }
 
       let successButton = document.querySelector("#success--button");
@@ -581,6 +584,7 @@
         success.classList.remove("active-form");
         alertContainer.classList.add("stop-scrolling");
         alertContainer.classList.remove("toggle-form-alert");
+        htmlDoc.classList.toggle("stop-scrolling");
       });
 
       let rejectButton = document.querySelector("#reject--button");
@@ -588,6 +592,7 @@
         reject.classList.remove("active-form");
         alertContainer.classList.add("stop-scrolling");
         alertContainer.classList.remove("toggle-form-alert");
+        htmlDoc.classList.toggle("stop-scrolling");
       });
 
     });
