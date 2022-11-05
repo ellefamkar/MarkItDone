@@ -1,0 +1,36 @@
+// HERO SECTION CONTENT
+
+.hero-wrapper {
+  
+  .hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    &__title {
+      @include textStyle(35px, 500, $white, $roboto, 120%, none, $text-shadow-medium, none);
+      text-align: center;
+      margin: 0 auto 1rem;
+      width: auto;
+      max-width: 312px;
+    }
+
+    &__description {
+      @include textStyle(19px, 100, $white, inherit, 39px, none, 0px 4px 4px rgba(0, 0, 0, 0.25), none);
+      opacity: 0.9;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    &__cta {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+  }
+}

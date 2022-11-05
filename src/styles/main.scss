@@ -36,7 +36,9 @@
 
 // PARTIALS
 @import "partials/_header.scss";
+@import "partials/_hero.scss";
 @import "partials/_navbar.scss";
+@import "partials/_menu.scss";
 @import "partials/_slider.scss";
 @import "partials/_form.scss";
 @import "partials/_footer.scss";
@@ -69,37 +71,6 @@
   height: 100%;
   position: relative;
 
-  .hero-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-
-    &__title {
-      @include textStyle(35px, 500, $white, $roboto, 120%, none, $text-shadow-medium, none);
-      text-align: center;
-      margin: 0 auto 1rem;
-      width: auto;
-      max-width: 312px;
-    }
-
-    &__description {
-      @include textStyle(19px, 100, $white, inherit, 39px, none, 0px 4px 4px rgba(0, 0, 0, 0.25), none);
-      opacity: 0.9;
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
-    &__cta {
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-    }
-  }
 }
 
 // BOOKING  SECTION
@@ -163,120 +134,13 @@
 // MENU SECTION
 
 .menu-section {
+
   &__container {
     border-radius: $border-radius;
     background-color: $gray-dark;
     border: 1px solid $gray-light;
     margin: 0rem auto;
     padding: 6rem 2rem 3rem 2rem;
-  }
-
-  &__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .menu__title {
-    @include  textStyle( 33px, 400, $white, $roboto, 45px, none, unset, none);
-    text-align: center;
-    margin-bottom: 3.5rem;
-
-    &::after {
-      content: "";
-      display: block;
-      border-top: 0.3rem solid $secondary-color-dark;
-      width: 3rem;
-      margin: 0 auto;
-      -webkit-transform: translateY(1.5rem);
-      transform: translateY(0.5rem);
-    }
-  }
-
-  .menu__tabs {
-    @include  textStyle(24px, 200, $white, $catamaran, 39px, 0.02em, unset, uppercase);
-    text-align: center;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .menu__tab {
-      display: block;
-      cursor: pointer;
-      padding: 1rem;
-      margin: 0.2rem auto;
-
-      &.active-tab {
-        color: $secondary-color-dark;
-      }
-
-      p {
-        width: auto;
-        margin: 0 auto;
-        text-align: center;
-        border-bottom: 1px dashed $gray-light;
-      }
-    }
-  }
-
-  &__body {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 463px;
-
-    .tab-content {
-      display: none;
-      &.active-tab {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    & div:last-child > div:last-child,
-    & div:last-child {
-      border-bottom: none;
-    }
-
-    .food {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      margin-bottom: 0.3rem;
-      border-bottom: 1px solid $gray-medium-opacity;
-
-      &__description {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      &__title {
-        @include textStyle(24px, 400, $white, $roboto, 32px, none, unset, $capitalize);
-        margin-bottom: 1rem;
-      }
-
-      &__ingredient {
-        @include textStyle(21px, 200, $gray-medium, $catamaran, 140%, none, unset, $capitalize);
-        opacity: $opacity;
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-
-      &__price {
-        @include textStyle(26px, 400, $gray-extra-light, $catamaran, 43px, none, unset, none);
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        text-align: center;
-        text-transform: $capitalize;
-      }
-    }
   }
 }
 
