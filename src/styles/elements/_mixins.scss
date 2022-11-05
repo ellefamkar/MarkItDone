@@ -61,3 +61,10 @@
     opacity: $opacity;
   }
 }
+
+@mixin scrollBar($color, $background-color, $border-radius, $box-shadow) {
+color: $color;
+background-color: $background-color;
+border-radius: $border-radius;
+box-shadow: $box-shadow;
+}

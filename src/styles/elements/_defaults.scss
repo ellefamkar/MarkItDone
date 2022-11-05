@@ -9,8 +9,27 @@ html {
   font-family: $catamaran;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+html {
+
+  // HTML SCROLLBAR AND SCROLL BEHAVIOR
+  &::-webkit-scrollbar-thumb {
+    cursor: $pointer;
+    @include scrollBar( inherit, #434343, 16px, inset 2px 2px 2px hsl(0deg 0% 100% / 25%) );
+  }
+  &::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+        cursor: $pointer;
+  }
+  &::-webkit-scrollbar-track {
+      background: linear-gradient(90deg,#434343,#434343 1px,#111 0,#111);
+  }
   scroll-behavior: smooth;
 }
+
 
 body {
   @include colorPattern($white, $black, unset);
