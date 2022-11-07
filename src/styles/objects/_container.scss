@@ -1,0 +1,14 @@
+// CONTAINERS
+
+.o-page-container {
+  @include colorPattern($white, $black, unset);
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+// CONTENT CONTAINER
+.o-section-container {
+  width: 100%;
+  max-width: 1208px;
+  margin: 0 auto;
+}
