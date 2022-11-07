@@ -10,23 +10,6 @@ html {
   font-family: $catamaran;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-
-  // HTML SCROLLBAR AND SCROLL BEHAVIOR
-  &::-webkit-scrollbar-thumb {
-    cursor: $pointer;
-    @include scrollBar( inherit, #434343, 16px, inset 2px 2px 2px hsl(0deg 0% 100% / 25%) );
-  }
-  &::-webkit-scrollbar {
-      width: 14px;
-      height: 14px;
-        cursor: $pointer;
-  }
-  &::-webkit-scrollbar-track {
-      background: linear-gradient(90deg,#434343,#434343 1px,#111 0,#111);
-  }
   scroll-behavior: smooth;
 }
 
@@ -47,74 +30,4 @@ h6 {
 p,
 span {
   font-family: $catamaran;
-}
-
-//REMOVES INPUT TYPE 'NUMBER' DEFAULT ARROWS
-input {
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-  }
-
-  &[type="number"] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
-  }
-
-  //REMOCES AM/PM IN INPUT 'DATE' TYPE
-  &::-webkit-datetime-edit-ampm-field {
-    display: none;
-  }
-}
-
-// DEFAULT STYLE FOR INPUT PLACEHOLDERS
-::placeholder {
-  @include textStyle(22px, 400, transparet, $catamaran, 120%, 0.02em, none, none);
-  display: flex;
-  align-items: center;
-}
-
-// CONTENT CONTAINER
-.container {
-  width: 100%;
-  max-width: 1208px;
-  margin: 0 auto;
-}
-
-.main-container {
-  max-width: 1920px;
-  margin: 0 auto;
-  @include colorPattern($white, $black, unset);
-}
-
-//STOPS PAGE FROM SCROLLING WHEN MODALS, BURGER MENU ETC. ARE OPEN
-.stop-scrolling {
-  overflow: hidden;
-}
-
-// MARGIN AND PADDING CLASSES
-$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8);
-@each $space in $spaceamounts {
-  .m-#{$space} {
-    margin: #{$space}rem;
-  }
-  .my-#{$space} {
-    margin: #{$space}rem 0;
-  }
-  .mx-#{$space} {
-    margin: 0 #{$space}rem;
-  }
-
-  .p-#{$space} {
-    padding: #{$space}rem;
-  }
-  .py-#{$space} {
-    padding: #{$space}rem 0;
-  }
-  .px-#{$space} {
-    padding: 0 #{$space}rem;
-  }
 }
