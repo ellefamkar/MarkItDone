@@ -48,13 +48,18 @@ $mq-breakpoints: (
   }
 
   // FOOTER
-  footer {
+  .c-footer {
     padding: 20px 0;
-    p {
-      font-size: 16px;
-      max-width: 680px;
+
+    .c-copyright {
+      &__description{
+          font-size: 16px;
+        max-width: 680px;
+      }
     }
   }
+
+
 }
 
 // STYLES FOR DEVICES WITH 768PX <= WIDTH  < 992PX

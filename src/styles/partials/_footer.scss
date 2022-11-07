@@ -1,14 +1,14 @@
 // Footer
 
-footer {
-  text-align: center;
+.c-footer {
   padding: 40px 0;
 
-  p {
-    @include textStyle(18px, 200, $gray-extra-light, $catamaran, 120%, none, unset, none);
-    width: auto;
-    max-width: 312px;
-    margin: 0 auto;
-    text-align: center;
+  .c-copyright {
+
+    &__description{
+      @include textStyle(18px, 200, $gray-extra-light, $catamaran, 120%, none, unset, none);
+      max-width: 312px;
+      margin: 0 auto;
+    }
   }
 }

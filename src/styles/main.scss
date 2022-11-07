@@ -64,16 +64,10 @@
 .is-visible {
   display: block;
 }
-
-.is-fixed{
- position: fixed;
-}
-
 //STOPS PAGE FROM SCROLLING WHEN MODALS, BURGER MENU ETC. ARE OPEN
-.stop-scrolling {
+.is-unscrollable {
   overflow: hidden;
 }
-
 
 // BOOKING  SECTION
 
