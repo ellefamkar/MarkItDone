@@ -35,8 +35,8 @@
   text-transform: $text-transform;
 }
 
-// default button styles
-@mixin buttonDefault {
+// DEFAULT BUTTON STYLES
+@mixin button {
   font-family: $catamaran;
   box-shadow: $box-shadow;
   font-size: 23px;
@@ -55,13 +55,17 @@
   border: 0;
   white-space: nowrap;
   transition: all 200ms ease-in-out;
+}
 
-  &:hover {
-    transform: scale(1.05);
+//BUTTON HOVER
+@mixin buttonHover($transform, $opacity) {
+  &:not([disabled]):hover {
+    transform: $transform;
     opacity: $opacity;
   }
 }
 
+// SCROLLBAR STYLE
 @mixin scrollBar($color, $background-color, $border-radius, $box-shadow) {
 color: $color;
 background-color: $background-color;
