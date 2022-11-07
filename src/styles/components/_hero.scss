@@ -1,0 +1,34 @@
+// HERO COMPONENT
+.c-hero {
+
+  align-items: center;
+  padding: 1.4rem;
+
+  &__overlay {
+    background: $black url("../images/landing/mobile-hero-bg.webp") center /
+      cover no-repeat;
+    height: 100vh;
+  }
+
+  &__content {
+    height: 100%;
+    margin-top: 2rem;
+    z-index: 1;
+  }
+
+  &__title {
+    @include textStyle(35px, 500, $white, $roboto, 120%, none, $text-shadow-medium, none );
+    margin: 0 auto 1rem;
+    max-width: 312px;
+  }
+
+  &__description {
+    @include textStyle(19px, 100, $white, inherit, 39px, none, 0px 4px 4px rgba(0, 0, 0, 0.25), none);
+    opacity: 0.9;
+    margin-bottom: 5rem;
+  }
+
+  &__cta {
+    flex-direction: column-reverse;
+  }
+}
