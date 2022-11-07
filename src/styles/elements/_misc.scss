@@ -1,3 +1,20 @@
+// html scrollbar design
+html {
+  &::-webkit-scrollbar-thumb {
+    cursor: $pointer;
+    @include scrollBar( inherit, #434343, 16px, inset 2px 2px 2px hsl(0deg 0% 100% / 25%));
+  }
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    cursor: $pointer;
+  }
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
+  }
+}
+
+// change selection color and backgrond color
 ::selection {
   @include colorPattern($white, $secondary-color-dark, unset);
 }
@@ -6,4 +23,32 @@
 }
 ::-webkit-selection {
   @include colorPattern($white, $secondary-color-dark, unset);
+}
+
+// remove input type 'number' default arrows
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  // removes am/pm in input 'date' type
+  &::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
+}
+
+// default style for input placeholders
+::placeholder {
+  @include textStyle( 22px, 400, transparet, $catamaran, 120%, 0.02em, none, none);
+  display: flex;
+  align-items: center;
 }
