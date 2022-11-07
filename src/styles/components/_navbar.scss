@@ -1,28 +1,43 @@
 /* NAVBAR */
 
-.main-navbar {
+.c-nav {
   font-family: $catamaran;
-  display: flex;
-  padding: 0;
 
   // NAV TOGGLER
-  .nav__toggler {
-    display: block;
+  &__toggler {
     z-index: 10;
     cursor: $pointer;
 
-    .bar {
-     width: 34px;
+    &-bar {
+      width: 34px;
       height: 3px;
       background-color: $white;
       margin: 6px 0;
-      border-radius: 5px;
+      border-radius: $border-radius-medium;
       transition: $transition;
     }
-
   }
 
-  &.nav__expanded {
+  &.is-open {
+
+    //NAV LIST ON MOBILE DEVICES
+    .c-nav__list {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      max-height: 100vh;
+      opacity: 1;
+      background: linear-gradient(90deg, $black 0%, $black-opacity 100%);
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      padding: 48px 64px;
+      z-index: 1;
+    }
+
     .bar-one {
       transform: rotate(-45deg) translate(-8px, 7px);
       margin: 8px 0;
@@ -38,51 +53,22 @@
       margin: 8px 0;
     }
   }
-
-  //NAV LIST
-
-  .nav__list {
-    display: none;
-    flex-direction: column;
+  
+  &__list {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: $transition;
-
-    .nav__item {
-      
-      a {
-        @include textStyle(22px, 200, $white, $catamaran, 42px, none, none, $uppercase);
-        text-decoration: none;
-        text-align: left;
-        display: block;
-        margin: 1.2rem auto;
-
-        &.active {
-          color: $secondary-color-light;
-          font-weight: 400;
-        }
-      }
-    }
   }
-}
 
-//NAV LIST ON MOBILE DEVICES
-.nav.nav__expanded {
-  .nav__list {
+  &__link {
+    @include textStyle( 22px, 200, $white, $catamaran, 42px, none, none, $uppercase);
     display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    max-height: 100vh;
-    opacity: 1;
-    background: linear-gradient(90deg, $black 0%, $black-opacity 100%);
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    padding: 48px 64px;
-    z-index: 1;
+    margin: 1.2rem auto;
+
+    &.is-active {
+      color: $secondary-color-light;
+      font-weight: 400;
+    }
   }
 }

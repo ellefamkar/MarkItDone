@@ -60,15 +60,15 @@ $mq-breakpoints: (
 // STYLES FOR DEVICES WITH 768PX <= WIDTH  < 992PX
 @include mq(md, lg) {
   // NAVBAR
-  .main-navbar {
+  .c-nav {
     margin-top: 2rem;
     width: 100%;
 
-    .nav__toggler {
+    &__toggler {
       display: none;
     }
 
-    .nav__list {
+    &__list {
       width: 100%;
       position: inherit;
       opacity: 1;
@@ -78,18 +78,20 @@ $mq-breakpoints: (
       height: auto;
       max-height: 100%;
 
-      .nav__item {
+      &-item {
         margin: 0 0.2rem;
         font-size: 19px;
         padding: 0.4rem 0.3rem;
+      }
+    }
 
-        a {
+    &__link {
           font-size: 19px;
           line-height: 31px;
           padding: 0.4rem 1rem;
           margin: 0 auto;
 
-          &.active {
+          &.is-active {
             color: $white;
             font-weight: 200;
 
@@ -105,9 +107,7 @@ $mq-breakpoints: (
             }
           }
         }
-      }
     }
-  }
 
    //HERO COMPONENT
   .c-hero {
@@ -362,13 +362,14 @@ $mq-breakpoints: (
   }
 
   //NAVBAR
-  .main-navbar {
-    .nav__toggler {
+  .c-nav {
+
+    &__toggler {
       display: none;
     }
 
-    .nav__list {
-      display: flex;
+    &__list {
+      display: flex !important;
       flex-direction: row;
       align-items: center;
       width: auto;
@@ -376,31 +377,31 @@ $mq-breakpoints: (
       position: inherit;
       max-height: 100%;
 
-      .nav__item {
+      &-item {
         margin: 0;
         font-size: 1.5rem;
         border: 0;
+      }
+    }
 
-        a {
-          font-size: 17px;
-          line-height: 31px;
-          padding: 0.4rem 1rem;
+    &__link {
+      font-size: 17px;
+      line-height: 31px;
+      padding: 0.4rem 1rem;
+      margin: 0 auto;
+
+      &.is-active {
+        color: $white;
+        font-weight: 200;
+
+        &::after {
+          content: "";
+          display: block;
+          border-top: 0.3rem solid $secondary-color-dark;
+          width: 3rem;
           margin: 0 auto;
-
-          &.active {
-            color: $white;
-            font-weight: 200;
-
-            &::after {
-              content: "";
-              display: block;
-              border-top: 0.3rem solid $secondary-color-dark;
-              width: 3rem;
-              margin: 0 auto;
-              -webkit-transform: translateY(1.5rem);
-              transform: translateY(0.2rem);
-            }
-          }
+          -webkit-transform: translateY(1.5rem);
+          transform: translateY(0.2rem);
         }
       }
     }

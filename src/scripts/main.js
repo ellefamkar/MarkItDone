@@ -3,28 +3,28 @@
   "use strict";
   document.addEventListener("DOMContentLoaded", function () {
     //NAVBAR LINKS
-    const links = document.querySelectorAll(".nav__item a");
-    const navbar = document.querySelector(".nav");
+    const links = document.querySelectorAll(".js-nav-link");
+    const navbar = document.querySelector(".js-nav");
     const body = document.querySelector("body");
     links.forEach((link) => {
       link.addEventListener("click", (e) => {
         // REMOVE PREVIOUS ACTIVED CLASSES
-        links.forEach((item) => item.classList.remove("active"));
+        links.forEach((item) => item.classList.remove("is-active"));
 
         // ADD NEW ACTIVE CLASSES
-        link.classList.add("active");
+        link.classList.add("is-active");
 
         //  REMOVE TOGGLE CLASSES FOR MENU IN THE MOBILE
-        navbar.classList.remove("nav__expanded");
-        body.classList.remove("stop-scrolling");
+        navbar.classList.remove("is-open");
+        body.classList.remove("is-unscrollable");
       });
     });
 
     // NAVBAR TOGGLER
-    const toggler = document.querySelector(".nav__toggler");
+    const toggler = document.querySelector(".js-nav-toggler");
     toggler.addEventListener("click", (event) => {
-      navbar.classList.toggle("nav__expanded");
-      body.classList.toggle("stop-scrolling");
+      navbar.classList.toggle("is-open");
+      body.classList.toggle("is-unscrollable");
     });
 
     //  FORM COUNTER

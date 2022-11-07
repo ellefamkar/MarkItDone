@@ -53,44 +53,44 @@
   <!-- endbuild -->
 </head>
 
-<body class="u-position--relative">
+<body class="u-relative">
 
   <!-- header  -->
-  <header class="c-header u-flex u-flex--row u-flex--space u-position--absolute u-width--auto">
+  <header class="c-header u-flex u-flex--row u-flex--space u-absolute u-width--auto">
     <img class="c-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
     <div class="c-header__navbar">
-      <nav class="main-navbar nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#second-section" class="active">
+      <nav class="c-nav js-nav u-flex u-flex--column u-p-0 nav">
+        <ul class="c-nav__list u-none u-flex--column">
+          <li class="c-nav__list-item">
+            <a href="#second-section" class="c-nav__link is-active js-nav-link">
               Why us
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#menu">
+          <li class="c-nav__list-item">
+            <a href="#menu" class="c-nav__link  js-nav-link u-text--left">
               Menu
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#popular-dishes">
+          <li class="c-nav__list-item">
+            <a href="#popular-dishes" class="c-nav__link  js-nav-link u-text--left">
               Popular dishes
             </a>
           </li>
-          <li class="nav__item">
-            <a href="#booking">
+          <li class="c-nav__list-item">
+            <a href="#booking" class="c-nav__link  js-nav-link u-text--left">
               Book
             </a>
           </li>
-          <li class="nav__item">
-            <a href="https://github.com/ellefamkar" rel="noreferrer noopener" target="_blank">
+          <li class="c-nav__list-item">
+            <a href="https://github.com/ellefamkar" rel="noreferrer noopener" target="_blank"  class="c-nav__link  js-nav-link u-text--left">
               Contact
             </a>
           </li>
         </ul>
-        <div class="nav__toggler">
-          <div class="bar bar-one"></div>
-          <div class="bar bar-two"></div>
-          <div class="bar bar-three"></div>
+        <div class="c-nav__toggler u-block  js-nav-toggler">
+          <div class="c-nav__toggler-bar bar-one"></div>
+          <div class="c-nav__toggler-bar bar-two"></div>
+          <div class="c-nav__toggler-bar bar-three"></div>
         </div>
       </nav>
     </div>
@@ -100,8 +100,8 @@
   <main class="o-page-container">
 
     <!-- hero section  -->
-    <section class="c-hero  c-hero__overlay u-flex u-position--relative">
-      <div class="o-container c-hero__content u-position--relative u-width--full u-flex u-flex--center u-flex--column">
+    <section class="c-hero  c-hero__overlay u-flex u-relative">
+      <div class="o-container c-hero__content u-relative u-width--full u-flex u-flex--center u-flex--column">
         <h1 class="c-hero__title u-text--center u-width--auto">
           Book a table in the best
           Mexican restaturant
@@ -117,7 +117,7 @@
             See Menu
           </a>
         </div>
-        <div class="c-scroll-down u-position--absolute is-hidden">
+        <div class="c-scroll-down u-absolute is-hidden">
           <a href="#menu" title="scroll down link">
             <i class="fa-solid fa-arrow-down"></i>
           </a>
@@ -570,31 +570,31 @@
 
         reject.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
-        alertContainer.classList.toggle("stop-scrolling");
-        htmlDoc.classList.add("stop-scrolling");
+        alertContainer.classList.toggle("is-unscrollable");
+        htmlDoc.classList.add("is-unscrollable");
 
       } else {
 
         success.classList.add("active-form");
         alertContainer.classList.toggle("toggle-form-alert");
-        alertContainer.classList.toggle("stop-scrolling");
-        htmlDoc.classList.add("stop-scrolling");
+        alertContainer.classList.toggle("is-unscrollable");
+        htmlDoc.classList.add("is-unscrollable");
       }
 
       let successButton = document.querySelector("#success--button");
       successButton.addEventListener("click", () => {
         success.classList.remove("active-form");
-        alertContainer.classList.add("stop-scrolling");
+        alertContainer.classList.add("is-unscrollable");
         alertContainer.classList.remove("toggle-form-alert");
-        htmlDoc.classList.remove("stop-scrolling");
+        htmlDoc.classList.remove("is-unscrollable");
       });
 
       let rejectButton = document.querySelector("#reject--button");
       rejectButton.addEventListener("click", () => {
         reject.classList.remove("active-form");
-        alertContainer.classList.add("stop-scrolling");
+        alertContainer.classList.add("is-unscrollable");
         alertContainer.classList.remove("toggle-form-alert");
-        htmlDoc.classList.remove("stop-scrolling");
+        htmlDoc.classList.remove("is-unscrollable");
       });
 
     });
