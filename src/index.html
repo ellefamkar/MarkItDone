@@ -53,80 +53,81 @@
   <!-- endbuild -->
 </head>
 
-<body>
+<body class="u-position--relative">
 
   <!-- header  -->
-  <header class="main-header">
-    <img class="main-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
-    <nav class="main-navbar nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#second-section" class="active">
-            Why us
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#menu">
-            Menu
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#popular-dishes">
-            Popular dishes
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#booking">
-            Book
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="https://github.com/ellefamkar" rel="noreferrer noopener" target="_blank">
-            Contact
-          </a>
-        </li>
-      </ul>
-      <div class="nav__toggler">
-        <div class="bar bar-one"></div>
-        <div class="bar bar-two"></div>
-        <div class="bar bar-three"></div>
-      </div>
-    </nav>
+  <header class="c-header u-flex u-flex--row u-flex--space u-position--absolute u-width--auto">
+    <img class="c-header__logo" src="./images/logo.svg" alt="Mercadito restaurant logo">
+    <div class="c-header__navbar">
+      <nav class="main-navbar nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#second-section" class="active">
+              Why us
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#menu">
+              Menu
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#popular-dishes">
+              Popular dishes
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#booking">
+              Book
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="https://github.com/ellefamkar" rel="noreferrer noopener" target="_blank">
+              Contact
+            </a>
+          </li>
+        </ul>
+        <div class="nav__toggler">
+          <div class="bar bar-one"></div>
+          <div class="bar bar-two"></div>
+          <div class="bar bar-three"></div>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- main content o-section-container  -->
+  <!-- main content container  -->
   <main class="o-page-container">
 
     <!-- hero section  -->
-    <section class="hero-section">
-      <div class="hero-wrapper o-section-container">
-        <div class="hero-content">
-          <h1 class="hero-content__title">
-            Book a table in the best
-            Mexican restaturant
-          </h1>
-          <p class="hero-content__description">
-            30% off for the Christmas
-          </p>
-          <div class="hero-content__cta">
-            <a href="#booking" class="c-button c-button--inline c-button--secondary ">
-              Book now
-            </a>
-            <a href="#menu" class="c-button c-button--inline  c-button--primary">
-              See Menu
-            </a>
-          </div>
+    <section class="c-hero  c-hero__overlay u-flex u-position--relative">
+      <div class="o-container c-hero__content u-position--relative u-width--full u-flex u-flex--center u-flex--column">
+        <h1 class="c-hero__title u-text--center u-width--auto">
+          Book a table in the best
+          Mexican restaturant
+        </h1>
+        <p class="c-hero__description u-text--center">
+          30% off for the Christmas
+        </p>
+        <div class="c-hero__cta u-flex u-flex--center u-text--center">
+          <a href="#booking" class="c-button c-button--inline c-button--secondary ">
+            Book now
+          </a>
+          <a href="#menu" class="c-button c-button--inline  c-button--primary">
+            See Menu
+          </a>
         </div>
-        <div class="to-bottom__arrow">
-          <a href="#menu" title="to bottom arrow">
+        <div class="c-scroll-down u-position--absolute is-hidden">
+          <a href="#menu" title="scroll down link">
             <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
       </div>
     </section>
 
+
     <!-- menu section  -->
-    <section class="menu-section o-section-container" id="menu">
+    <section class="menu-section o-container" id="menu">
       <div class="menu-section__container">
         <div class="menu-section__content">
           <div class="menu-section__header">
@@ -261,7 +262,7 @@
     </section>
 
     <!-- popular dishes slider section  -->
-    <section class="popular-dishes-section o-section-container" id="popular-dishes">
+    <section class="popular-dishes-section o-container" id="popular-dishes">
       <div class="popular-dishes">
         <div class="popular-dishes__content-container">
           <div class="popular-dishes__content slider" id="slider">
@@ -284,7 +285,7 @@
     </section>
 
     <!-- booking section  -->
-    <section class="booking-section o-section-container" id="booking">
+    <section class="booking-section o-container" id="booking">
       <div class="booking-section__content-container">
         <div class="booking-section__info">
           <h2 class="booking-section__title">
@@ -368,7 +369,8 @@
               <small id="length" class="form-text text-danger"></small>
             </div>
             <div class="form-group">
-              <button type="submit" id="submit-button" class="c-button c-button--secondary c-button--block form__submit-button">BOOK NOW</button>
+              <button type="submit" id="submit-button"
+                class="c-button c-button--secondary c-button--block form__submit-button">BOOK NOW</button>
             </div>
           </form>
         </div>

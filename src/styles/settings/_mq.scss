@@ -28,10 +28,9 @@ $mq-breakpoints: (
 // STYLES FOR DEVICES WITH WIDTH >= 768PX
 @include mq(md) {
   //HEADER
-  .main-header {
+  .c-header {
     top: 1%;
     flex-direction: column;
-    align-items: center;
 
     &__logo {
       width: 237px;
@@ -110,15 +109,12 @@ $mq-breakpoints: (
     }
   }
 
-  //HERO SECTION
-  .hero-section {
-    background: $black url("../images/landing/tablet-hero-bg.webp") center /
-      cover no-repeat;
-    height: 100vh;
-  }
+   //HERO COMPONENT
+  .c-hero {
+      background: $black url("../images/landing/tablet-hero-bg.webp") center /
+        cover no-repeat;
+      height: 100vh;
 
-  .hero-wrapper {
-    .hero-content {
       &__title {
         width: auto;
         max-width: 584px;
@@ -133,12 +129,11 @@ $mq-breakpoints: (
 
       &__cta {
         flex-direction: row;
-      }
     }
   }
 
-  // TAP TO BOTTOM - LINK (ONLY AVAILABLE IN TABLET VERSION FOR CURRENT DESIGN)
-  .to-bottom__arrow {
+  // SCROLL DOWN - LINK (ONLY AVAILABLE IN TABLET VERSION FOR CURRENT DESIGN)
+  .c-scroll-down {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,7 +351,7 @@ $mq-breakpoints: (
 // STYLES FOR DEVICES WITH 992PX <= WIDTH
 @include mq(lg) {
   //HEADER
-  .main-header {
+  .c-header {
     align-items: end;
     flex-direction: row;
 
@@ -411,15 +406,13 @@ $mq-breakpoints: (
     }
   }
 
-  //HERO SECTION
-  .hero-section {
-    background: $black url("../images/landing/desktop-hero-bg.webp") center
-      no-repeat;
-    height: 956px;
-    padding: 3rem;
-  }
-  .hero-wrapper {
-    .hero-content {
+  //HERO COMPONENT
+  .c-hero {
+      background: $black url("../images/landing/desktop-hero-bg.webp") center
+        no-repeat;
+      height: 956px;
+      padding: 3rem;
+
       &__title {
         width: auto;
         max-width: 584px;
@@ -435,8 +428,8 @@ $mq-breakpoints: (
       &__cta {
         flex-direction: row;
       }
-    }
   }
+
 
   // BOOKING  SECTION
   .booking-section {

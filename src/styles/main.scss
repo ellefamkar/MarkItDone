@@ -15,9 +15,9 @@
 @import "elements/_misc.scss";
 
 // OBJECTS
-//
 @import "objects/_row.scss";
 @import "objects/_section.scss";
+@import "objects/_container.scss";
 
 //FONTAWESOME
 @import "./fontawesome/fontawesome.scss";
@@ -28,16 +28,18 @@
 //
 // Build and include your project’s UI components here.
 //----------------------------------*\
+
 // Components
-//----------------------------------*/
-@import "components/_section.scss";
 @import "components/_button.scss";
 @import "components/_link.scss";
+@import "components/_hero.scss";
+@import "components/_navbar.scss";
+
+//----------------------------------*/
+@import "components/_section.scss";
 
 // PARTIALS
 @import "partials/_header.scss";
-@import "partials/_hero.scss";
-@import "partials/_navbar.scss";
 @import "partials/_menu.scss";
 @import "partials/_slider.scss";
 @import "partials/_form.scss";
@@ -45,33 +47,32 @@
 
 // UTILITIES
 @import "utilities/_flex.scss";
+@import "utilities/_position.scss";
+@import "utilities/_spacing.scss";
+@import "utilities/_text.scss";
+@import "utilities/_width.scss";
 
 // Mobile-First  Approach
 
 /*  MAIN SECTION CONTENTS */
 
-// HERO SECTION
 
-.hero-section {
-  padding: 1.4rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: $black url("../images/landing/mobile-hero-bg.webp") center / cover
-    no-repeat;
-  height: 100vh;
+.is-hidden{
+  display: none;
+}
+.is-visible {
+  display: block;
 }
 
-.hero-wrapper {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 1208px;
-  height: 100%;
-  position: relative;
-
+.is-fixed{
+ position: fixed;
 }
+
+//STOPS PAGE FROM SCROLLING WHEN MODALS, BURGER MENU ETC. ARE OPEN
+.stop-scrolling {
+  overflow: hidden;
+}
+
 
 // BOOKING  SECTION
 
