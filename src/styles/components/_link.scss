@@ -10,8 +10,9 @@ a {
   }
 }
 
-// TAP TO BOTTOM - LINK (ONLY AVAILABLE IN TABLET VERSION FOR CURRENT DESIGN)
-.to-bottom__arrow {
+// SCROLL DOWN COMPONENT (ONLY AVAILABLE IN TABLET VERSION FOR CURRENT DESIGN)
+.c-scroll-down {
+  @include colorPattern($white, $black-opacity, unset);
   width: 62px;
   height: 62px;
   border-radius: 50%;
@@ -19,7 +20,6 @@ a {
   left: 45%;
   bottom: 10%;
   display: none;
-  @include colorPattern($white, $black-opacity, unset);
 
   a {
     font-size: 26px;
