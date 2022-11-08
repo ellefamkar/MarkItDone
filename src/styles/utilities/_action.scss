@@ -1,0 +1,25 @@
+.is-hidden{
+  display: none;
+}
+
+.is-visible {
+  display: block;
+}
+
+.is-unscrollable {
+  overflow: hidden;
+}
+
+.has-alert {
+  display: flex !important;
+}
+
+.is-active-form {
+  display: block !important;
+}
+
+.is-invalid-input {
+  color: $secondary-color-dark;
+  display: inline-block;
+  margin: 0.4rem 0;
+}
