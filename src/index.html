@@ -67,7 +67,7 @@
             </a>
           </li>
           <li class="c-nav__list-item">
-            <a href="#menu" class="c-nav__link  js-nav-link u-text--left">
+            <a href="#c-menu" class="c-nav__link  js-nav-link u-text--left">
               Menu
             </a>
           </li>
@@ -114,21 +114,25 @@
           <a href="#booking" class="c-button c-button--inline c-button--secondary ">
             Book now
           </a>
-          <a href="#menu" class="c-button c-button--inline  c-button--primary">
+          <a href="#c-menu" class="c-button c-button--inline  c-button--primary">
             See Menu
           </a>
         </div>
         <div class="c-scroll-down u-absolute is-hidden">
-          <a href="#menu" title="scroll down link">
+          <a href="#c-menu" title="scroll down link">
             <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
       </div>
     </section>
 
-
     <!-- menu section  -->
-    <section class="menu-section o-container" id="menu">
+
+    <section class="o-container" >
+
+    </section>
+
+    <section class="menu-section o-container " id="c-menu">
       <div class="menu-section__container">
         <div class="menu-section__content">
           <div class="menu-section__header">
@@ -389,10 +393,10 @@
   </footer>
 
   <!-- Booking modal -->
-  <div class="c-modal c-modal__overlay u-fixed u-none u-flex--center">
+  <div class="c-modal c-modal__overlay u-fixed u-none u-flex--center js-modal">
 
     <!-- Success  -->
-    <div class="c-modal__content u-none u-text--center u-p-2 u-width--full" id="c-modal--success">
+    <div class="c-modal__content js-modal--success u-none u-text--center u-p-2 u-width--full" id="c-modal--success">
       <div class="c-modal__header u-mb-2">
         <div class="c-modal__icon u-flex u-flex--center">
           <i class="fa-solid fa-check"></i>
@@ -408,7 +412,7 @@
     </div>
 
     <!-- Fail  -->
-    <div class="c-modal__content u-none u-text--center u-p-2 u-width--full" id="c-modal--fail">
+    <div class="c-modal__content js-modal--fail u-none u-text--center u-p-2 u-width--full" id="c-modal--fail">
       <div class="c-modal__header u-mb-2">
         <div class="c-modal__icon u-flex u-flex--center">
             <i class="fa-solid fa-times"></i>
@@ -545,9 +549,9 @@
       errors = [];
 
       let inputs = document.querySelectorAll(".validation");
-      let reject = document.querySelector("#c-modal--fail");
-      let success = document.querySelector("#c-modal--success");
-      let alertContainer = document.querySelector(".c-modal");
+      let reject = document.querySelector(".js-modal--fail");
+      let success = document.querySelector(".js-modal--success");
+      let alertContainer = document.querySelector(".js-modal");
       let htmlDoc = document.querySelector("html");
       let errorMessage = "";
 
