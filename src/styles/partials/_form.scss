@@ -71,6 +71,11 @@
   }
 }
 
+
+.toggle-form-alert {
+  display: flex !important;
+}
+
 // VALIDATION STYLES
 
 .active-form {
@@ -81,89 +86,4 @@
   color: $secondary-color-dark;
   display: inline-block;
   margin: 0.4rem 0;
-}
-
-.alert-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  background-color: $gray-dark;
-}
-
-.toggle-form-alert {
-  display: flex;
-}
-
-.alert {
-  @include colorPattern($white, $gray-dark, unset) ;
-  width: 90%;
-  max-width: 431px;
-  height: auto;
-  text-align: center;
-  display: none;
-  padding: 2rem;
-  z-index: 1000;
-
-  &-header {
-    margin-bottom: 2rem;
-
-    &__icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $alert-gray-dark;
-      border: 2px solid $alert-gray-medium;
-
-      i {
-        font-size: 50px;
-        font-weight: 200;
-
-        &.fa-times {
-          color: $fail;
-        }
-        &.fa-check {
-          color: $success;
-        }
-      }
-    }
-  }
-  &-content {
-    margin: 2rem auto;
-
-    h3 {
-      @include textStyle(26px, 300,  $white, $roboto, 201.87%, none, none, none);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      @include textStyle(18px, 200, $gray-extra-light, $catamaran, 140.4%, none, none, none);
-      font-style: normal;
-      text-align: center;
-    }
-  }
-
-  &-footer {
-    height: auto;
-
-    button {
-      background: $primary-color;
-      box-shadow: 0px 3.14074px 3.14074px $black-opacity-low;
-      border-radius: $border-radius-medium;
-      border-radius: 6.28148px;
-    }
-  }
 }
