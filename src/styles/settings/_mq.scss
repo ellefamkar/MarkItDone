@@ -40,12 +40,12 @@ $mq-breakpoints: (
 
   // MODAL
   .c-modal {
-      background: $alert-gray;
+    background: $alert-gray;
 
-      &__content {
-        padding: 4rem;
-        box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
-      }
+    &__content {
+      padding: 4rem;
+      box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
+    }
   }
 
   // FOOTER
@@ -53,17 +53,24 @@ $mq-breakpoints: (
     padding: 20px 0;
 
     .c-copyright {
-      &__description{
-          font-size: 16px;
+      &__description {
+        font-size: 16px;
         max-width: 680px;
       }
     }
   }
-
 }
 
 // STYLES FOR DEVICES WITH 768PX <= WIDTH  < 992PX
 @include mq(md, lg) {
+
+  // WRAPPER
+  .o-wrapper {
+    width : 90%;
+    max-width: 820px;
+    margin: 5rem auto;
+    padding: 5rem 2rem 3rem 2rem;
+  }
 
   // NAVBAR
   .c-nav {
@@ -92,49 +99,49 @@ $mq-breakpoints: (
     }
 
     &__link {
-          font-size: 19px;
-          line-height: 31px;
-          padding: 0.4rem 1rem;
+      font-size: 19px;
+      line-height: 31px;
+      padding: 0.4rem 1rem;
+      margin: 0 auto;
+
+      &.is-active {
+        color: $white;
+        font-weight: 200;
+
+        &::after {
+          content: "";
+          display: block;
+          border-top: 0.25rem solid $secondary-color-dark;
+          width: 100%;
           margin: 0 auto;
-
-          &.is-active {
-            color: $white;
-            font-weight: 200;
-
-            &::after {
-              content: "";
-              display: block;
-              border-top: 0.25rem solid $secondary-color-dark;
-              width: 100%;
-              margin: 0 auto;
-               border-radius: $border-radius-medium;
-              -webkit-transform: translateY(1.5rem);
-              transform: translateY(0.2rem);
-            }
-          }
+          border-radius: $border-radius-medium;
+          -webkit-transform: translateY(1.5rem);
+          transform: translateY(0.2rem);
         }
+      }
+    }
+  }
+
+  //HERO COMPONENT
+  .c-hero {
+    background: $black url("../images/landing/tablet-hero-bg.webp") center /
+      cover no-repeat;
+    height: 100vh;
+
+    &__title {
+      width: auto;
+      max-width: 584px;
+      margin: 2rem auto 1rem auto;
+      font-size: 52px;
     }
 
-   //HERO COMPONENT
-  .c-hero {
-      background: $black url("../images/landing/tablet-hero-bg.webp") center /
-        cover no-repeat;
-      height: 100vh;
+    &__description {
+      font-size: 25px;
+      margin: 0.7rem auto 3rem auto;
+    }
 
-      &__title {
-        width: auto;
-        max-width: 584px;
-        margin: 2rem auto 1rem auto;
-        font-size: 52px;
-      }
-
-      &__description {
-        font-size: 25px;
-        margin: 0.7rem auto 3rem auto;
-      }
-
-      &__cta {
-        flex-direction: row;
+    &__cta {
+      flex-direction: row;
     }
   }
 
@@ -170,14 +177,6 @@ $mq-breakpoints: (
 
   // MENU SECTION
   .menu-section {
-    margin: 1rem auto;
-    padding: 3rem 2rem 2rem 2rem;
-
-    &__container {
-      width: 100%;
-      max-width: 820px;
-    }
-
     .menu__title {
       margin-bottom: 1.5rem;
       font-weight: 400;
@@ -356,6 +355,15 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH 992PX <= WIDTH
 @include mq(lg) {
+
+  // WRAPPER
+  .o-wrapper {
+    width : 97%;
+     height: auto;
+      min-height: 500px;
+      padding: 7rem;
+  }
+
   //HEADER
   .c-header {
     align-items: end;
@@ -369,7 +377,6 @@ $mq-breakpoints: (
 
   //NAVBAR
   .c-nav {
-
     &__toggler {
       display: none;
     }
@@ -416,26 +423,26 @@ $mq-breakpoints: (
 
   //HERO COMPONENT
   .c-hero {
-      background: $black url("../images/landing/desktop-hero-bg.webp") center
-        no-repeat;
-      height: 956px;
-      padding: 3rem;
+    background: $black url("../images/landing/desktop-hero-bg.webp") center
+      no-repeat;
+    height: 956px;
+    padding: 3rem;
 
-      &__title {
-        width: auto;
-        max-width: 584px;
-        margin: 2rem auto 1rem auto;
-        font-size: 52px;
-      }
+    &__title {
+      width: auto;
+      max-width: 584px;
+      margin: 2rem auto 1rem auto;
+      font-size: 52px;
+    }
 
-      &__description {
-        font-size: 23px;
-        margin-bottom: 3rem;
-      }
+    &__description {
+      font-size: 23px;
+      margin-bottom: 3rem;
+    }
 
-      &__cta {
-        flex-direction: row;
-      }
+    &__cta {
+      flex-direction: row;
+    }
   }
 
   // BOOKING  SECTION
@@ -488,15 +495,6 @@ $mq-breakpoints: (
 
   // MENU SECTION
   .menu-section {
-    margin: 3rem auto;
-    padding: 1rem;
-
-    &__container {
-      height: auto;
-      min-height: 500px;
-      padding: 7rem;
-    }
-
     &__header {
       flex-direction: row;
       justify-content: space-between;
