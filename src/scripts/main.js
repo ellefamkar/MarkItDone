@@ -2,12 +2,15 @@
 (function () {
   "use strict";
   document.addEventListener("DOMContentLoaded", function () {
+
     //NAVBAR LINKS
     const links = document.querySelectorAll(".js-nav-link");
     const navbar = document.querySelector(".js-nav");
     const body = document.querySelector("body");
+
     links.forEach((link) => {
       link.addEventListener("click", (e) => {
+
         // REMOVE PREVIOUS ACTIVED CLASSES
         links.forEach((item) => item.classList.remove("is-active"));
 
@@ -22,7 +25,7 @@
 
     // NAVBAR TOGGLER
     const toggler = document.querySelector(".js-nav-toggler");
-    toggler.addEventListener("click", (event) => {
+    toggler.addEventListener("click", () => {
       navbar.classList.toggle("is-open");
       body.classList.toggle("is-unscrollable");
     });
@@ -31,6 +34,7 @@
     const counterContainer = document.querySelectorAll(".js-counter");
     const resetValue = document.querySelector(".js-counter--input");
     let count = 2;
+
     counterContainer.forEach((item) => {
       item.addEventListener("click", () => {
         const classes = item.classList;
@@ -49,7 +53,7 @@
       });
     });
 
-    // OUR MENU TABS
+    // MENU TABS
     const tabs = document.querySelectorAll(".js-tabs__tab");
     const tabContents = document.querySelectorAll(".js-tabs__panel");
     tabs.forEach((tab) => {
@@ -72,7 +76,7 @@
   });
 })();
 
-// POPULAR DISHES SLIDER
+// DISHES SLIDER
 const sliderContent = {
   '1': {
     'url': "images/slider/slide-1.webp",
@@ -97,7 +101,7 @@ const sliderContent = {
   },
 };
 
-// Switch between slider datas
+// SWITCH BETWEEN SLIDER DATA
 const switchSlider = (pageNumber = 1) => {
   let data = sliderContent[pageNumber];
   let result = "";
@@ -123,11 +127,11 @@ const switchSlider = (pageNumber = 1) => {
   let sliderContainer = document.querySelector(".js-slider__content");
   sliderContainer.innerHTML = result;
 };
-
 switchSlider();
 
 let slider = 1;
-// previous button action
+
+// COUNTER PREVIOUS BUTTON
 const prevButton = () => {
   slider -= 1;
   if (slider < 1) {
@@ -136,7 +140,7 @@ const prevButton = () => {
   switchSlider(slider);
 };
 
-// next button action
+// COUNTER NEXT BUTTON
 const nextButton = () => {
   slider += 1;
   if (slider > Object.keys(sliderContent).length) {
