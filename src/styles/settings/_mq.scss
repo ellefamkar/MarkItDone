@@ -27,7 +27,7 @@ $mq-breakpoints: (
 
 // STYLES FOR DEVICES WITH WIDTH >= 768PX
 @include mq(md) {
-  //HEADER
+  // HEADER
   .c-header {
     top: 1%;
     flex-direction: column;
@@ -38,13 +38,14 @@ $mq-breakpoints: (
     }
   }
 
-  // ALERT
-  .alert-container {
-    background: $alert-gray;
-  }
-  .alert {
-    padding: 4rem;
-    box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
+  // MODAL
+  .c-modal {
+      background: $alert-gray;
+
+      &__content {
+        padding: 4rem;
+        box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.5);
+      }
   }
 
   // FOOTER
@@ -59,11 +60,11 @@ $mq-breakpoints: (
     }
   }
 
-
 }
 
 // STYLES FOR DEVICES WITH 768PX <= WIDTH  < 992PX
 @include mq(md, lg) {
+
   // NAVBAR
   .c-nav {
     margin-top: 2rem;
@@ -103,10 +104,10 @@ $mq-breakpoints: (
             &::after {
               content: "";
               display: block;
-              border-top: 0.2rem solid $secondary-color-dark;
-              width: 4rem;
-              height: 2px;
+              border-top: 0.25rem solid $secondary-color-dark;
+              width: 100%;
               margin: 0 auto;
+               border-radius: $border-radius-medium;
               -webkit-transform: translateY(1.5rem);
               transform: translateY(0.2rem);
             }
@@ -402,8 +403,9 @@ $mq-breakpoints: (
         &::after {
           content: "";
           display: block;
-          border-top: 0.3rem solid $secondary-color-dark;
-          width: 3rem;
+          border-top: 0.25rem solid $secondary-color-dark;
+          border-radius: $border-radius-medium;
+          width: 100%;
           margin: 0 auto;
           -webkit-transform: translateY(1.5rem);
           transform: translateY(0.2rem);
@@ -435,7 +437,6 @@ $mq-breakpoints: (
         flex-direction: row;
       }
   }
-
 
   // BOOKING  SECTION
   .booking-section {

@@ -383,40 +383,43 @@
   <!-- footer  -->
   <footer class="c-footer o-container">
     <div class="c-copyright">
-      <p class="c-copyright__description u-width--auto u-text--center">All rights are reserved for Mercadito Restaurant © 2022</p>
+      <p class="c-copyright__description u-width--auto u-text--center">All rights are reserved for Mercadito Restaurant
+        © 2022</p>
     </div>
   </footer>
 
-  <!-- booking alert modal -->
-  <div class="alert-container">
+  <!-- Booking modal -->
+  <div class="c-modal c-modal__overlay u-fixed u-none u-flex--center">
 
-    <!-- Success alert  -->
-    <div class="alert" id="success">
-      <div class="alert-header">
-        <div class="alert-header__icon">
+    <!-- Success  -->
+    <div class="c-modal__content u-none u-text--center u-p-2 u-width--full" id="c-modal--success">
+      <div class="c-modal__header u-mb-2">
+        <div class="c-modal__icon u-flex u-flex--center">
           <i class="fa-solid fa-check"></i>
         </div>
       </div>
-      <div class="alert-content" id="success_content">
-        <h3>Thank You.</h3>
-        <p>Your reservasion has bee received, we'll be happy to see you.</p>
+      <div class="s-cms-content" id="success__message">
+        <h3 class="c-modal__title u-flex u-flex--center u-text--center u-my-1">Thank You.</h3>
+        <p class="c-modal__description u-text--center">Your reservasion has bee received, we'll be happy to see you.</p>
       </div>
-      <div class="alert-footer">
-        <button type="button" class="c-button c-button--block c-button--primary" id="success--button">OK</button>
+      <div class="c-modal__footer">
+        <button type="button" class="qa-modal-accept c-button c-button--block c-button--primary" id="c-button--success">OK</button>
       </div>
     </div>
 
-    <!-- reject alert  -->
-    <div class="alert" id="reject">
-      <div class="alert-header__icon">
-        <i class="fa-solid fa-times"></i>
+    <!-- Fail  -->
+    <div class="c-modal__content u-none u-text--center u-p-2 u-width--full" id="c-modal--fail">
+      <div class="c-modal__header u-mb-2">
+        <div class="c-modal__icon u-flex u-flex--center">
+            <i class="fa-solid fa-times"></i>
+        </div>
       </div>
-      <div class="alert-content" id="reject_content">
-        <h3>We've a Problem</h3>
-        <p>Unfourtunately a problem occured during the operation. We’re so sorry for the inconvenience.</p>
+      <div class="s-cms-content" id="fail__message">
+        <h3 class="c-modal__title u-flex u-flex--center u-text--center u-my-1">We've a Problem</h3>
+        <p class="c-modal__description u-text--center">Unfourtunately a problem occured during the operation. We’re so sorry for the inconvenience.</p>
       </div>
-      <div class="alert-footer">
-        <button type="button" class="c-button c-button--block c-button--primary" id="reject--button">OK</button>
+      <div class="c-modal__footer">
+        <button type="button" class="qa-modal-accept c-button c-button--block c-button--primary" id="c-button--fail">OK</button>
       </div>
     </div>
 
@@ -428,9 +431,7 @@
   <script>
 
     // FORM SUBMISSION VALIDATION
-
     let errors = [];
-
     const validation = (error_id, value, type, length, name, required = false) => {
       document.getElementById(error_id).innerHTML = "";
 
@@ -544,9 +545,9 @@
       errors = [];
 
       let inputs = document.querySelectorAll(".validation");
-      let reject = document.querySelector("#reject");
-      let success = document.querySelector("#success");
-      let alertContainer = document.querySelector(".alert-container");
+      let reject = document.querySelector("#c-modal--fail");
+      let success = document.querySelector("#c-modal--success");
+      let alertContainer = document.querySelector(".c-modal");
       let htmlDoc = document.querySelector("html");
       let errorMessage = "";
 
@@ -584,7 +585,7 @@
         htmlDoc.classList.add("is-unscrollable");
       }
 
-      let successButton = document.querySelector("#success--button");
+      let successButton = document.querySelector("#c-button--success");
       successButton.addEventListener("click", () => {
         success.classList.remove("active-form");
         alertContainer.classList.add("is-unscrollable");
@@ -592,7 +593,7 @@
         htmlDoc.classList.remove("is-unscrollable");
       });
 
-      let rejectButton = document.querySelector("#reject--button");
+      let rejectButton = document.querySelector("#c-button--fail");
       rejectButton.addEventListener("click", () => {
         reject.classList.remove("active-form");
         alertContainer.classList.add("is-unscrollable");

@@ -13,38 +13,15 @@
     width: 90%;
     max-width: 431px;
     height: auto;
-    text-align: center;
-    display: none;
-    padding: 2rem;
     z-index: 1000;
-  }
-
-  &__header {
-    margin-bottom: 2rem;
   }
 
   &__title {
     @include textStyle(26px, 300, $white, $roboto, 201.87%, none, none, none);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 1rem;
   }
 
   &__description {
-    @include textStyle(
-      18px,
-      200,
-      $gray-extra-light,
-      $catamaran,
-      140.4%,
-      none,
-      none,
-      none
-    );
-    font-style: normal;
-    text-align: center;
+    @include textStyle( 18px, 200, $gray-extra-light, $catamaran, 140.4%, none, none, none);
   }
 
   &__icon {
@@ -52,9 +29,6 @@
     height: 100px;
     border-radius: 50%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: $alert-gray-dark;
     border: 2px solid $alert-gray-medium;
 
@@ -74,31 +48,14 @@
   &__footer {
     height: auto;
 
-    button {
+    .qa-modal-accept {
       background: $primary-color;
       box-shadow: 0px 3.14074px 3.14074px $black-opacity-low;
       border-radius: $border-radius-medium;
-      border-radius: 6.28148px;
     }
   }
 }
 
 .s-cms-content {
   margin: 2rem auto;
-}
-
-.toggle-form-alert {
-  display: flex !important;
-}
-
-// VALIDATION STYLES
-
-.active-form {
-  display: block !important;
-}
-
-.text-danger {
-  color: $secondary-color-dark;
-  display: inline-block;
-  margin: 0.4rem 0;
 }
