@@ -50,8 +50,8 @@
     });
 
     // OUR MENU TABS
-    const tabs = document.querySelectorAll(".menu__tab");
-    const tabContents = document.querySelectorAll(".tab-content");
+    const tabs = document.querySelectorAll(".js-tabs__tab");
+    const tabContents = document.querySelectorAll(".js-tabs__panel");
     tabs.forEach((tab) => {
       tab.addEventListener("click", (e) => {
         const targetTabContent = document.querySelector(
@@ -59,14 +59,14 @@
         );
 
         // REMOVE PREVIOUS ACTIVED CLASSES
-        tabs.forEach((tab) => tab.classList.remove("active-tab"));
+        tabs.forEach((tab) => tab.classList.remove("is-open"));
         tabContents.forEach((tabContent) =>
-          tabContent.classList.remove("active-tab")
+          tabContent.classList.remove("is-open")
         );
 
         // ADD NEW ACTIVE CLASSES
-        tab.classList.add("active-tab");
-        targetTabContent.classList.add("active-tab");
+        tab.classList.add("is-open");
+        targetTabContent.classList.add("is-open");
       });
     });
   });
