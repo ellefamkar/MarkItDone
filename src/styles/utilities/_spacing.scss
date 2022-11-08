@@ -1,4 +1,3 @@
-
 // PADDING AND MARGIN
 
 $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8);
@@ -12,6 +11,18 @@ $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8);
   .u-mx-#{$space} {
     margin: 0 #{$space}rem;
   }
+  .u-mb-#{$space} {
+    margin-bottom: #{$space}rem;
+  }
+  .u-mt-#{$space} {
+    margin-top: #{$space}rem;
+  }
+  .u-mr-#{$space} {
+    margin-right: #{$space}rem;
+  }
+  .u-ml-#{$space} {
+    margin-left: #{$space}rem;
+  }
   .u-p-#{$space} {
     padding: #{$space}rem;
   }
@@ -20,5 +31,17 @@ $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8);
   }
   .u-px-#{$space} {
     padding: 0 #{$space}rem;
+  }
+  .u-pb-#{$space} {
+    padding-bottom: #{$space}rem;
+  }
+  .u-pt-#{$space} {
+    padding-top: #{$space}rem;
+  }
+  .u-pr-#{$space} {
+    padding-right: #{$space}rem;
+  }
+  .u-pl-#{$space} {
+    padding-left: #{$space}rem;
   }
 }
