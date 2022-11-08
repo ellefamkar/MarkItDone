@@ -1,0 +1,55 @@
+
+// BOOKING  SECTION
+
+.c-booking {
+  background: $black url("../images/landing/booking-bg.webp") center/cover
+    no-repeat;
+  padding: 2rem 0 0 0;
+
+  &__form-container {
+      @include colorPattern($gray-extra-light, $gray-dark, $box-shadow-dark);
+      width: 100%;
+      max-width: 463px;
+      margin: 0.5rem auto 0;
+      padding: 65px 25px;
+      border-radius: $border-radius;
+      border: 1px solid $gray-light-opacity;
+
+      input{
+        text-transform: none;
+        color: $gray-extra-light;
+
+        &::placeholder{
+          color: transparent;
+          text-transform: none;
+        }
+      }
+    }
+
+  &__title {
+    @include textStyle(34px, 400, $white, $roboto, 120%, none,  $text-shadow-light, none);
+    text-align: center;
+    margin: 3rem auto;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.3rem solid $secondary-color-dark;
+      width: 3rem;
+      margin: 0 auto;
+      -webkit-transform: translateY(1.5rem);
+      transform: translateY(0.5rem);
+    }
+  }
+
+  &__description {
+    @include textStyle( 21px, 200, $white, $catamaran, 140%, none, $text-shadow-light, none);
+    text-align: center;
+    margin: 1rem auto 4rem auto;
+    padding: 0.5rem 1rem;
+    width: auto;
+    max-width: 376px;
+  }
+}
