@@ -72,7 +72,7 @@
             </a>
           </li>
           <li class="c-nav__list-item">
-            <a href="#popular-dishes" class="c-nav__link  js-nav-link u-text--left">
+            <a href="#c-slider" class="c-nav__link  js-nav-link u-text--left">
               Popular dishes
             </a>
           </li>
@@ -261,35 +261,28 @@
       </div>
     </section>
 
-    <section class="o-container">
-
-    </section>
-
-
-    <!-- popular dishes slider section  -->
-    <section class="popular-dishes-section o-container" id="popular-dishes">
-      <div class="popular-dishes">
-        <div class="popular-dishes__content-container">
-          <div class="popular-dishes__content slider" id="slider">
-            <div class="slider__header u-flex u-flex--column" id="slider_header">
-              <h2 class="popular-dishes__title">The Most Popular Dishes</h2>
-              <div class="slider__arrows" id="slider-arrows">
-                <span id="prev-button" onclick="prevButton()">
-                  <img src="images/icons/left-arrow.svg" alt="slider left arrow">
-                </span>
-                <span id="slider_number"></span>
-                <span id="next-button" onclick="nextButton()">
-                  <img src="images/icons/right-arrow.svg" alt="slider right arrow">
-                </span>
+    <!-- popular dishes / slider section  -->
+    <section class="o-container u-mt-4">
+      <div class="o-wrapper u-pr-1 u-pl-1">
+            <div class="c-slider  js-slider u-flex u-flex--column u-flex--center" id="slider">
+              <div class="c-slider__header u-flex u-flex--column" id="slider_header">
+                <h2 class="c-slider__title  u-text--center u-mb-4">The Most Popular Dishes</h2>
+                <div class="c-slider__arrows u-flex u-flex--space" id="c-slider-arrows">
+                  <span id="c-slider__prev-button u-text--center" onclick="prevButton()">
+                    <img src="images/icons/left-arrow.svg" alt="slider left arrow">
+                  </span>
+                  <span class="js-slider__numbers u-text--center" id="c-slider__numbers"></span>
+                  <span id="c-slider__next-button u-text--center" onclick="nextButton()">
+                    <img src="images/icons/right-arrow.svg" alt="slider right arrow">
+                  </span>
+                </div>
               </div>
+              <div class="c-slider__content row u-mt-2  js-slider__content" id="slider__content"></div>
             </div>
-            <div class="slider__content row mx-0" id="slider_content"></div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- booking section  -->
+
     <section class="booking-section o-container" id="booking">
       <div class="booking-section__content-container">
         <div class="booking-section__info">

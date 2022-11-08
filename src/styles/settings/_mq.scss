@@ -227,27 +227,19 @@ $mq-breakpoints: (
     }
   }
 
-  // POPULAR DISHES SECTION
-  .popular-dishes-section {
-    margin: 1rem auto 3rem;
-    padding: 3rem 2rem 0rem 2rem;
-  }
-  .popular-dishes {
+ // SLIDER
+  .c-slider {
     width: 100%;
     max-width: 820px;
     height: auto;
-    padding: 4.5rem 2rem;
     margin: 0rem auto;
 
     &__title {
       font-size: 40px;
       line-height: 53px;
     }
-  }
 
-  // SLIDER
-  .slider {
-    &__header {
+     &__header {
       flex-direction: column;
     }
 
@@ -281,20 +273,16 @@ $mq-breakpoints: (
       }
     }
   }
+
 }
 
 // STYLES FOR DEVICES WITH 992PX <= WIDTH  < 1300PX
 @include mq(lg, wide) {
-  // POPULAR DISHES SECTION
-  .popular-dishes {
-    &__content {
+   // SLIDER
+  .c-slider {
       min-height: 380px;
-    }
-  }
 
-  // SLIDER
-  .slider {
-    &__header {
+       &__header {
       flex-direction: row !important;
       justify-content: space-between;
       align-items: center;
@@ -338,6 +326,7 @@ $mq-breakpoints: (
         width: auto;
         margin-bottom: 0rem;
         padding: 0;
+
         img {
           width: 100%;
           max-width: 100%;
@@ -361,6 +350,7 @@ $mq-breakpoints: (
       }
     }
   }
+
 }
 
 // STYLES FOR DEVICES WITH 992PX <= WIDTH
@@ -556,15 +546,14 @@ $mq-breakpoints: (
 
   }
 
-  // POPULAR DISHES SECTION
-  .popular-dishes-section {
-    margin: 1rem auto;
-    padding: 1rem;
-  }
-  .popular-dishes {
+  // SLIDER
+  .c-slider {
     height: auto;
-    padding: 7rem;
     margin: 0rem auto;
+    display: block;
+    height: auto;
+    width: 100%;
+    min-height: 380px;
 
     &__title {
       font-size: 40px;
@@ -576,22 +565,13 @@ $mq-breakpoints: (
       }
     }
 
-    &__content {
-      display: block;
-      height: auto;
-      min-height: 380px;
-    }
-  }
-
-  // SLIDER
-  .slider {
-    &__header {
+     &__header {
       flex-direction: row !important;
       justify-content: space-between;
       align-items: center;
     }
 
-    &__content {
+  &__content {
       width: auto;
       max-width: 100%;
       flex-direction: row;
@@ -652,16 +632,17 @@ $mq-breakpoints: (
       }
     }
   }
+
 }
 
 // STYLES FOR DEVICES WITH 1300PX <= WIDTH
 @include mq(wide) {
-  // POPULAR DISHES SECTION
-  .popular-dishes {
-    &__content {
+
+   //SLIDER
+  .c-slider {
       display: block;
       height: auto;
-      min-height: 500px;
-    }
+      min-height: 450px;
+
   }
 }

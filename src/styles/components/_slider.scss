@@ -1,6 +1,23 @@
 //  SLIDER
 
-.slider {
+.c-slider {
+  height: auto;
+  min-height: 500px;
+
+  &__title {
+    @include textStyle(32px, 400, $white, $roboto, 45px, none, unset, none);
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 0.3rem solid $secondary-color-dark;
+      width: 3rem;
+      margin: 0 auto;
+      -webkit-transform: translateY(1.5rem);
+      transform: translateY(0.5rem);
+    }
+  }
+
   &__header {
     align-items: center;
   }
@@ -26,47 +43,36 @@
 
     &-title {
       @include textStyle(30px, 400, $white, $roboto, 40px, none, none, none);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
     &-description {
       @include textStyle(20px, 400, $gray-light, inherit, 130%, none, none, none);
-      text-align: center;
       margin: 2rem auto;
     }
 
     &-price {
-      @include textStyle(30px, 500, $white, $catamaran,130%, none, none, none);
-      text-align: center;
+      @include textStyle(30px, 500, $white, $catamaran, 130%, none, none, none);
     }
   }
 
   &__arrows {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
     img {
       cursor: $pointer;
     }
 
     & > span {
-      @include textStyle(23px, 200, $white, $catamaran, 39px, none, none, none);
+      @include textStyle(22px, 200, $white, $catamaran, 39px, none, none, none);
       padding: 0 1.4rem;
-      text-align: center;
     }
   }
 }
 
 // ACTIVE SLIDE NUMBER
-.active-slider {
+.slider--active {
   color: $secondary-color-dark;
 }
 
 // DEACTIVE SLIDE NUMBER
-.deactive-slider {
+.slider--inactive {
   color: $white;
 }

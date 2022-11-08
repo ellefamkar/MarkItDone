@@ -102,25 +102,25 @@ const switchSlider = (pageNumber = 1) => {
   let data = sliderContent[pageNumber];
   let result = "";
   result += `
-            <div class="slider__content-img col-xl-7 col-lg-6  col-md-12 col-12 px-0">
+            <div class="c-slider__content-img col-xl-7 col-lg-6  col-md-12 col-12 u-px-0">
                 <img src="${data.url}" alt="${data.title}">
             </div>
-            <div class="slider__content-container  col-xl-5 col-lg-6 col-md-12 col-12 u-flex u-flex--column u-flex--center">
-              <p class="slider__content-title">
+            <div class="c-slider__content-container  u-px-0 col-xl-5 col-lg-6 col-md-12 col-12 u-flex u-flex--column u-flex--center">
+              <p class="c-slider__content-title u-width--full u-flex u-flex--center u-text--center">
                 ${data.title}
                 </p>
-                <p class="slider__content-description">
+                <p class="c-slider__content-description u-width--full u-text--center">
                     ${data.description}
                 </p>
-                <p class="slider__content-price">$${data.price}</p>
+                <p class="c-slider__content-price u-width--full u-text--center">$${data.price}</p>
             </div>
         `;
 
-  let number = `<span class="active-slider">${pageNumber} &nbsp </span> <span class="deactive-slider"> /  &nbsp ${Object.keys(sliderContent).length}</span>`;
-  let slideNumber = document.querySelector("#slider_number");
+  let number = `<span class="slider--active">${pageNumber} &nbsp </span> <span class="slider--inactive"> /  &nbsp ${Object.keys(sliderContent).length}</span>`;
+  let slideNumber = document.querySelector(".js-slider__numbers");
   slideNumber.innerHTML = number;
 
-  let sliderContainer = document.querySelector("#slider_content");
+  let sliderContainer = document.querySelector(".js-slider__content ");
   sliderContainer.innerHTML = result;
 };
 switchSlider();
