@@ -1,0 +1,89 @@
+// FORM
+
+.booking-section__form-container {
+  position: relative;
+
+  .c-form__group {
+    padding-top: 0.75rem;
+  }
+
+  label {
+    @include  textStyle(18px, 200, $gray-extra-light, $catamaran, 120%, 0.02em, none, $uppercase);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    @include  textStyle(18px, 100, $white, $catamaran, 120%, 0.02em, none, $uppercase);
+    @include colorPattern($white, $white-medium-opacity, unset) ;
+    display: block;
+    outline: 0;
+    width: 100%;
+    height: 49px;
+    border: 1px solid $white-high-opacity;
+    padding: 0.7rem;
+
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      color: $white;
+      opacity: 0.5;
+      font-size: 20px;
+    }
+  }
+
+  //Counter Box
+
+  .counter-container {
+    @include  colorPattern($gray-extra-light, $white-medium-opacity, unset);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 0;
+    width: 100%;
+    height: 49px;
+    border: 1px solid $white-high-opacity;
+    padding: 0.7rem 1rem;
+
+    .decrement-wrapper,
+    .increment-wrapper {
+      cursor: pointer;
+      span {
+        font-size: 31px;
+      }
+    }
+
+    .counter-divs {
+      height: 32px;
+    }
+
+    input {
+      @include  textStyle(22px, 400, $gray-extra-light, inherit, 120%,  0.02em, none, none);
+      @include colorPattern($gray-extra-light, transparent, transparent) ;
+      width: 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: transparent;
+      z-index: 1;
+    }
+  }
+}
+
+
+.toggle-form-alert {
+  display: flex !important;
+}
+
+// VALIDATION STYLES
+
+.active-form {
+  display: block !important;
+}
+
+.text-danger {
+  color: $secondary-color-dark;
+  display: inline-block;
+  margin: 0.4rem 0;
+}

@@ -282,6 +282,12 @@
       </div>
     </section>
 
+    <!-- booking section  -->
+    <section class="booking-section u-mt-4">
+      <div class=" o-container ">
+
+      </div>
+    </section>
 
     <section class="booking-section o-container" id="booking">
       <div class="booking-section__content-container">
@@ -295,9 +301,9 @@
         </div>
         <div class="booking-section__form-container">
 
-          <form class="form" id="form">
+          <form class="form c-form js-form" id="form">
             <!-- name  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="firstname">Your Name</label>
               <input type="text" name="name" oninput="validation('name', this.value, 'text', 4, this.name, true)"
                 class="form-control validation" placeholder="Enter name" data-error="name">
@@ -305,7 +311,7 @@
             </div>
 
             <!-- phone number  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="exampleInputphone">your phone</label>
               <input type="text" name="phone" oninput="validation('phone', this.value, 'number', 11, this.name, true)"
                 class="form-control validation" placeholder="phone">
@@ -313,7 +319,7 @@
             </div>
 
             <!-- email  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="exampleInputEmail1">your email </label>
               <input type="email" name="email" oninput="validation('email', this.value, 'email', null, this.name, true)"
                 class="form-control validation" placeholder="email">
@@ -321,7 +327,7 @@
             </div>
 
             <!-- Date  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="exampleInputDate1">Date </label>
               <input type="date" name="date" oninput="validation('date', this.value, 'date', null, this.name, true)"
                 class="form-control validation" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
@@ -330,7 +336,7 @@
             </div>
 
             <!-- time  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="exampleInputTime1">Time </label>
               <input type="time" name="time" oninput="validation('time', this.value, 'time', null, this.name, true)"
                 class="form-control validation" placeholder="Enter Time" value="18:00">
@@ -338,7 +344,7 @@
             </div>
 
             <!-- number of people  -->
-            <div class="form-group">
+            <div class="c-form__group">
               <label for="exampleInputNumber of people1">Number of people </label>
               <div class="counter-container">
                 <div class="decrement-wrapper">
@@ -366,7 +372,7 @@
               </div>
               <small id="length" class="form-text text-danger"></small>
             </div>
-            <div class="form-group">
+            <div class="c-form__group">
               <button type="submit" id="submit-button"
                 class="c-button c-button--secondary c-button--block form__submit-button">BOOK NOW</button>
             </div>
@@ -432,6 +438,7 @@
 
     // FORM SUBMISSION VALIDATION
     let errors = [];
+
     const validation = (error_id, value, type, length, name, required = false) => {
       document.getElementById(error_id).innerHTML = "";
 
@@ -538,7 +545,7 @@
 
     }
 
-    const submitForm = document.querySelector("#form");
+    const submitForm = document.querySelector(".js-form");
     submitForm.addEventListener("submit", (event) => {
 
       event.preventDefault();
