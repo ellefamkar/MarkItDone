@@ -1,5 +1,5 @@
 
-// BOOKING  SECTION
+// BOOKING  COMPONENT
 
 .c-booking {
   background: $black url("../images/landing/booking-bg.webp") center/cover
@@ -28,7 +28,6 @@
 
   &__title {
     @include textStyle(34px, 400, $white, $roboto, 120%, none,  $text-shadow-light, none);
-    text-align: center;
     margin: 3rem auto;
     width: -moz-fit-content;
     width: fit-content;
@@ -46,7 +45,6 @@
 
   &__description {
     @include textStyle( 21px, 200, $white, $catamaran, 140%, none, $text-shadow-light, none);
-    text-align: center;
     margin: 1rem auto 4rem auto;
     padding: 0.5rem 1rem;
     width: auto;

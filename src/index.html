@@ -62,7 +62,7 @@
       <nav class="c-nav js-nav u-flex u-flex--column u-p-0 nav">
         <ul class="c-nav__list u-none u-flex--column">
           <li class="c-nav__list-item">
-            <a href="#second-section" class="c-nav__link is-active js-nav-link">
+            <a href="#" class="c-nav__link is-active js-nav-link">
               Why us
             </a>
           </li>
@@ -77,7 +77,7 @@
             </a>
           </li>
           <li class="c-nav__list-item">
-            <a href="#booking" class="c-nav__link  js-nav-link u-text--left">
+            <a href="#c-booking" class="c-nav__link  js-nav-link u-text--left">
               Book
             </a>
           </li>
@@ -111,7 +111,7 @@
           30% off for the Christmas
         </p>
         <div class="c-hero__cta u-flex u-flex--center u-text--center">
-          <a href="#booking" class="c-button c-button--inline c-button--secondary ">
+          <a href="#c-booking" class="c-button c-button--inline c-button--secondary ">
             Book now
           </a>
           <a href="#c-menu" class="c-button c-button--inline  c-button--primary">
@@ -264,119 +264,119 @@
     <!-- popular dishes / slider section  -->
     <section class="o-container u-mt-4">
       <div class="o-wrapper u-pr-1 u-pl-1">
-            <div class="c-slider  js-slider u-flex u-flex--column u-flex--center" id="slider">
-              <div class="c-slider__header u-flex u-flex--column" id="slider_header">
-                <h2 class="c-slider__title  u-text--center u-mb-4">The Most Popular Dishes</h2>
-                <div class="c-slider__arrows u-flex u-flex--space" id="c-slider-arrows">
-                  <span id="c-slider__prev-button u-text--center" onclick="prevButton()">
-                    <img src="images/icons/left-arrow.svg" alt="slider left arrow">
-                  </span>
-                  <span class="js-slider__numbers u-text--center" id="c-slider__numbers"></span>
-                  <span id="c-slider__next-button u-text--center" onclick="nextButton()">
-                    <img src="images/icons/right-arrow.svg" alt="slider right arrow">
-                  </span>
-                </div>
-              </div>
-              <div class="c-slider__content row u-mt-2  js-slider__content" id="slider__content"></div>
+        <div class="c-slider  js-slider u-flex u-flex--column u-flex--center" id="slider">
+          <div class="c-slider__header u-flex u-flex--column" id="slider_header">
+            <h2 class="c-slider__title  u-text--center u-mb-4">The Most Popular Dishes</h2>
+            <div class="c-slider__arrows u-flex u-flex--space" id="c-slider-arrows">
+              <span id="c-slider__prev-button u-text--center" onclick="prevButton()">
+                <img src="images/icons/left-arrow.svg" alt="slider left arrow">
+              </span>
+              <span class="js-slider__numbers u-text--center" id="c-slider__numbers"></span>
+              <span id="c-slider__next-button u-text--center" onclick="nextButton()">
+                <img src="images/icons/right-arrow.svg" alt="slider right arrow">
+              </span>
             </div>
+          </div>
+          <div class="c-slider__content row u-mt-2  js-slider__content" id="slider__content"></div>
+        </div>
       </div>
     </section>
 
     <!-- booking section  -->
-    <section class="booking-section u-mt-4">
-      <div class=" o-container ">
+    <section class="c-booking u-mt-4" id="c-booking">
+      <div class="o-container ">
+        <div class="c-booking__content u-flex u-flex--column u-flex--center">
+          <div class="c-booking__info">
+            <h2 class="c-booking__title u-text--center">
+              Book a Table
+            </h2>
+            <p class="c-booking__description u-text--center">
+              When we first opened our restaturant, it didn't take a long time for us to prove our diffrence.
+            </p>
+          </div>
+          <div class="c-booking__form-container u-relative">
 
-      </div>
-    </section>
-
-    <section class="booking-section o-container" id="booking">
-      <div class="booking-section__content-container">
-        <div class="booking-section__info">
-          <h2 class="booking-section__title">
-            Book a Table
-          </h2>
-          <p class="booking-section__description">
-            When we first opened our restaturant, it didn't take a long time for us to prove our diffrence.
-          </p>
-        </div>
-        <div class="booking-section__form-container">
-
-          <form class="form c-form js-form" id="form">
-            <!-- name  -->
-            <div class="c-form__group">
-              <label for="firstname">Your Name</label>
-              <input type="text" name="name" oninput="validation('name', this.value, 'text', 4, this.name, true)"
-                class="form-control validation" placeholder="Enter name" data-error="name">
-              <small id="name" class="form-text text-danger"></small>
-            </div>
-
-            <!-- phone number  -->
-            <div class="c-form__group">
-              <label for="exampleInputphone">your phone</label>
-              <input type="text" name="phone" oninput="validation('phone', this.value, 'number', 11, this.name, true)"
-                class="form-control validation" placeholder="phone">
-              <small id="phone" class="form-text text-danger"></small>
-            </div>
-
-            <!-- email  -->
-            <div class="c-form__group">
-              <label for="exampleInputEmail1">your email </label>
-              <input type="email" name="email" oninput="validation('email', this.value, 'email', null, this.name, true)"
-                class="form-control validation" placeholder="email">
-              <small id="email" class="form-text text-danger"></small>
-            </div>
-
-            <!-- Date  -->
-            <div class="c-form__group">
-              <label for="exampleInputDate1">Date </label>
-              <input type="date" name="date" oninput="validation('date', this.value, 'date', null, this.name, true)"
-                class="form-control validation" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
-                placeholder="123-45-678">
-              <small id="calendar" class="form-text text-danger"></small>
-            </div>
-
-            <!-- time  -->
-            <div class="c-form__group">
-              <label for="exampleInputTime1">Time </label>
-              <input type="time" name="time" oninput="validation('time', this.value, 'time', null, this.name, true)"
-                class="form-control validation" placeholder="Enter Time" value="18:00">
-              <small id="time" class="form-text text-danger"></small>
-            </div>
-
-            <!-- number of people  -->
-            <div class="c-form__group">
-              <label for="exampleInputNumber of people1">Number of people </label>
-              <div class="counter-container">
-                <div class="decrement-wrapper">
-                  <div class="counter-divs decrement">
-                    <span class="decrement-content">
-                      -
-                      <span>
-                  </div>
-                </div>
-                <div class="reset-wrapper">
-                  <div class="counter-divs reset">
-                    <input type="number" value="2" name="number"
-                      oninput="validation('number', this.value, 'number', null, this.name, true, false)"
-                      class="form-control counter-input validation" placeholder="2">
-                    <small id="number" class="form-text text-danger"></small>
-                  </div>
-                </div>
-                <div class="increment-wrapper">
-                  <div class="counter-divs increment">
-                    <span class="increment-content">
-                      +
-                    </span>
-                  </div>
-                </div>
+            <form class="form c-form js-form" id="form">
+              <!-- name  -->
+              <div class="c-form__group">
+                <label for="firstname">Your Name</label>
+                <input type="text" name="name" oninput="validation('name', this.value, 'text', 4, this.name, true)"
+                  class="form-control validation" placeholder="Enter name" data-error="name">
+                <small id="name" class="form-text text-danger"></small>
               </div>
-              <small id="length" class="form-text text-danger"></small>
-            </div>
-            <div class="c-form__group">
-              <button type="submit" id="submit-button"
-                class="c-button c-button--secondary c-button--block form__submit-button">BOOK NOW</button>
-            </div>
-          </form>
+
+              <!-- phone number  -->
+              <div class="c-form__group">
+                <label for="exampleInputphone">your phone</label>
+                <input type="text" name="phone" oninput="validation('phone', this.value, 'number', 11, this.name, true)"
+                  class="form-control validation" placeholder="phone">
+                <small id="phone" class="form-text text-danger"></small>
+              </div>
+
+              <!-- email  -->
+              <div class="c-form__group">
+                <label for="exampleInputEmail1">your email </label>
+                <input type="email" name="email"
+                  oninput="validation('email', this.value, 'email', null, this.name, true)"
+                  class="form-control validation" placeholder="email">
+                <small id="email" class="form-text text-danger"></small>
+              </div>
+
+              <!-- Date  -->
+              <div class="c-form__group">
+                <label for="exampleInputDate1">Date </label>
+                <input type="date" name="date" oninput="validation('date', this.value, 'date', null, this.name, true)"
+                  class="form-control validation" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
+                  placeholder="123-45-678">
+                <small id="calendar" class="form-text text-danger"></small>
+              </div>
+
+              <!-- time  -->
+              <div class="c-form__group">
+                <label for="exampleInputTime1">Time </label>
+                <input type="time" name="time" oninput="validation('time', this.value, 'time', null, this.name, true)"
+                  class="form-control validation" placeholder="Enter Time" value="18:00">
+                <small id="time" class="form-text text-danger"></small>
+              </div>
+
+              <!-- number of people  -->
+              <div class="c-form__group">
+                <label for="exampleInputNumber of people1">Number of people </label>
+                <div class="counter-container">
+                  <div class="decrement-wrapper">
+                    <div class="counter-divs decrement">
+                      <span class="decrement-content">
+                        -
+                        <span>
+                    </div>
+                  </div>
+                  <div class="reset-wrapper">
+                    <div class="counter-divs reset">
+                      <input type="number" value="2" name="number"
+                        oninput="validation('number', this.value, 'number', null, this.name, true, false)"
+                        class="form-control counter-input validation" placeholder="2">
+                      <small id="number" class="form-text text-danger"></small>
+                    </div>
+                  </div>
+                  <div class="increment-wrapper">
+                    <div class="counter-divs increment">
+                      <span class="increment-content">
+                        +
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <small id="length" class="form-text text-danger"></small>
+              </div>
+
+              <div class="c-form__group">
+                <button type="submit" id="submit-button"
+                  class="c-button c-button--secondary c-button--block form__submit-button">BOOK NOW</button>
+              </div>
+
+            </form>
+
+          </div>
         </div>
       </div>
     </section>
