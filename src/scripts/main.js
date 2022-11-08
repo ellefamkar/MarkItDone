@@ -28,16 +28,16 @@
     });
 
     //  FORM COUNTER
-    const counterContainer = document.querySelectorAll(".counter-divs");
-    const resetValue = document.querySelector(".counter-input");
+    const counterContainer = document.querySelectorAll(".js-counter");
+    const resetValue = document.querySelector(".js-counter--input");
     let count = 2;
     counterContainer.forEach((item) => {
       item.addEventListener("click", () => {
         const classes = item.classList;
         // INCREMENT
-        if (classes.contains("increment")) {
+        if (classes.contains("js-counter--increment")) {
           count++;
-        } else if (classes.contains("decrement")) {
+        } else if (classes.contains("js-counter--decrement")) {
           // DECREMENT FOR NUMMBERS GREATER THAN 2
           if (count > 2) {
             count--;

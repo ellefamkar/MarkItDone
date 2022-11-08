@@ -2,7 +2,6 @@
 
 .c-form {
 
-
   &__group {
     padding-top: 0.75rem;
   }
@@ -15,7 +14,7 @@
   }
 
   input {
-    @include  textStyle(18px, 100, $white, $catamaran, 120%, 0.02em, none, $uppercase);
+    @include  textStyle(18px, 100, $white, $catamaran, 120%, 0.02em, none, lowercase);
     @include colorPattern($white, $white-medium-opacity, unset) ;
     display: block;
     outline: 0;
@@ -34,18 +33,16 @@
 
 }
 
-
-.toggle-form-alert {
+// VALIDATION STYLES
+.has-alert {
   display: flex !important;
 }
 
-// VALIDATION STYLES
-
-.active-form {
+.is-active-form {
   display: block !important;
 }
 
-.text-danger {
+.is-invalid-input {
   color: $secondary-color-dark;
   display: inline-block;
   margin: 0.4rem 0;

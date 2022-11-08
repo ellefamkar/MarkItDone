@@ -296,77 +296,77 @@
           </div>
           <div class="c-booking__form-container u-relative">
 
-            <form class="form c-form js-form" id="form">
+            <form class="form c-form js-form" id="c-form">
               <!-- name  -->
               <div class="c-form__group">
-                <label for="firstname">Your Name</label>
+                <label for="name">Your Name</label>
                 <input type="text" name="name" oninput="validation('name', this.value, 'text', 4, this.name, true)"
-                  class="form-control validation" placeholder="Enter name" data-error="name">
-                <small id="name" class="form-text text-danger"></small>
+                  class="c-form__control is-valid" placeholder="Enter name" data-error="name">
+                <small id="name" class="form-text is-invalid-input"></small>
               </div>
 
               <!-- phone number  -->
               <div class="c-form__group">
-                <label for="exampleInputphone">your phone</label>
+                <label for="phone">your phone</label>
                 <input type="text" name="phone" oninput="validation('phone', this.value, 'number', 11, this.name, true)"
-                  class="form-control validation" placeholder="phone">
-                <small id="phone" class="form-text text-danger"></small>
+                  class="c-form__control is-valid" placeholder="phone">
+                <small id="phone" class="form-text is-invalid-input"></small>
               </div>
 
               <!-- email  -->
               <div class="c-form__group">
-                <label for="exampleInputEmail1">your email </label>
+                <label for="email">your email </label>
                 <input type="email" name="email"
                   oninput="validation('email', this.value, 'email', null, this.name, true)"
-                  class="form-control validation" placeholder="email">
-                <small id="email" class="form-text text-danger"></small>
+                  class="c-form__control is-valid" placeholder="email">
+                <small id="email" class="form-text is-invalid-input"></small>
               </div>
 
               <!-- Date  -->
               <div class="c-form__group">
                 <label for="exampleInputDate1">Date </label>
                 <input type="date" name="date" oninput="validation('date', this.value, 'date', null, this.name, true)"
-                  class="form-control validation" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
+                  class="c-form__control is-valid" pattern="\d{1,2}/\d{1,2}/\d{4}" value="2018-07-22"
                   placeholder="123-45-678">
-                <small id="calendar" class="form-text text-danger"></small>
+                <small id="calendar" class="form-text is-invalid-input"></small>
               </div>
 
               <!-- time  -->
               <div class="c-form__group">
                 <label for="exampleInputTime1">Time </label>
                 <input type="time" name="time" oninput="validation('time', this.value, 'time', null, this.name, true)"
-                  class="form-control validation" placeholder="Enter Time" value="18:00">
-                <small id="time" class="form-text text-danger"></small>
+                  class="c-form__control is-valid" placeholder="Enter Time" value="18:00">
+                <small id="time" class="form-text is-invalid-input"></small>
               </div>
 
               <!-- number of people  -->
               <div class="c-form__group">
-                <label for="exampleInputNumber of people1">Number of people </label>
-                <div class="counter-container">
-                  <div class="decrement-wrapper">
-                    <div class="counter-divs decrement">
-                      <span class="decrement-content">
+                <label for="Number of people">Number of people </label>
+                <div class="c-counter">
+                  <div class="c-counter__decrement-wrapper">
+                    <div class="c-counter__wrapper js-counter js-counter--decrement">
+                      <span class="c-counter__decrement">
                         -
                         <span>
                     </div>
                   </div>
                   <div class="reset-wrapper">
-                    <div class="counter-divs reset">
+                    <div class="c-counter__wrapper js-counter js-counter--reset">
                       <input type="number" value="2" name="number"
                         oninput="validation('number', this.value, 'number', null, this.name, true, false)"
-                        class="form-control counter-input validation" placeholder="2">
-                      <small id="number" class="form-text text-danger"></small>
+                        class="c-form__control js-counter--input  is-valid" placeholder="2">
+                      <small id="number" class="form-text is-invalid-input"></small>
                     </div>
                   </div>
-                  <div class="increment-wrapper">
-                    <div class="counter-divs increment">
-                      <span class="increment-content">
+                  <div class="c-counter__increment-wrapper">
+                    <div class="c-counter__wrapper js-counter  js-counter--increment">
+                      <span class="c-counter__increment">
                         +
                       </span>
                     </div>
                   </div>
                 </div>
-                <small id="length" class="form-text text-danger"></small>
+                <small id="length" class="form-text is-invalid-input"></small>
               </div>
 
               <div class="c-form__group">
@@ -551,7 +551,7 @@
       event.preventDefault();
       errors = [];
 
-      let inputs = document.querySelectorAll(".validation");
+      let inputs = document.querySelectorAll(".is-valid");
       let fail = document.querySelector(".js-modal--fail");
       let success = document.querySelector(".js-modal--success");
       let alertContainer = document.querySelector(".js-modal");
@@ -579,32 +579,32 @@
           }
         }
 
-        fail.classList.add("active-form");
-        alertContainer.classList.toggle("toggle-form-alert");
+        fail.classList.add("is-active-form");
+        alertContainer.classList.toggle("has-alert");
         alertContainer.classList.toggle("is-unscrollable");
         htmlDoc.classList.add("is-unscrollable");
 
       } else {
 
-        success.classList.add("active-form");
-        alertContainer.classList.toggle("toggle-form-alert");
+        success.classList.add("is-active-form");
+        alertContainer.classList.toggle("has-alert");
         alertContainer.classList.toggle("is-unscrollable");
         htmlDoc.classList.add("is-unscrollable");
       }
 
       let successButton = document.querySelector("#c-button--success");
       successButton.addEventListener("click", () => {
-        success.classList.remove("active-form");
+        success.classList.remove("is-active-form");
         alertContainer.classList.add("is-unscrollable");
-        alertContainer.classList.remove("toggle-form-alert");
+        alertContainer.classList.remove("has-alert");
         htmlDoc.classList.remove("is-unscrollable");
       });
 
       let failButton = document.querySelector("#c-button--fail");
       failButton.addEventListener("click", () => {
-        fail.classList.remove("active-form");
+        fail.classList.remove("is-active-form");
         alertContainer.classList.add("is-unscrollable");
-        alertContainer.classList.remove("toggle-form-alert");
+        alertContainer.classList.remove("has-alert");
         htmlDoc.classList.remove("is-unscrollable");
       });
 

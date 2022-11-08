@@ -1,6 +1,9 @@
-  //Counter Box
+//Counter Component
+@import "components/_form.scss";
 
-  .counter-container {
+  .c-counter {
+    @extend .c-form;
+
     @include  colorPattern($gray-extra-light, $white-medium-opacity, unset);
     display: flex;
     align-items: center;
@@ -11,15 +14,16 @@
     border: 1px solid $white-high-opacity;
     padding: 0.7rem 1rem;
 
-    .decrement-wrapper,
-    .increment-wrapper {
-      cursor: pointer;
+    &__decrement-wrapper,
+    &__increment-wrapper {
+      cursor: $pointer;
+
       span {
         font-size: 31px;
       }
     }
 
-    .counter-divs {
+    &__wrapper {
       height: 32px;
     }
 
@@ -35,3 +39,4 @@
       z-index: 1;
     }
   }
+
