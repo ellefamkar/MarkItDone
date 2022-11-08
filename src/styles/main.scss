@@ -52,27 +52,12 @@
 
 // UTILITIES
 @import "utilities/_display.scss";
+@import "utilities/_action.scss";
 @import "utilities/_flex.scss";
 @import "utilities/_position.scss";
 @import "utilities/_spacing.scss";
 @import "utilities/_text.scss";
 @import "utilities/_width.scss";
-
-// Mobile-First  Approach
-
-/*  MAIN SECTION CONTENTS */
-
-
-.is-hidden{
-  display: none;
-}
-.is-visible {
-  display: block;
-}
-//STOPS PAGE FROM SCROLLING WHEN MODALS, BURGER MENU ETC. ARE OPEN
-.is-unscrollable {
-  overflow: hidden;
-}
 
 // MEDIA QUERIES
 @import "settings/_mq";
