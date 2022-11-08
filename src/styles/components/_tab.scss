@@ -1,0 +1,36 @@
+// TABS
+
+  .c-tabs {
+    @include  textStyle(24px, 200, $white, $catamaran, 39px, 0.02em, unset, uppercase);
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__tab {
+      display: block;
+      cursor: pointer;
+      padding: 1rem;
+      margin: 0.2rem auto;
+
+      &.active-tab {
+        color: $secondary-color-dark;
+      }
+
+      p {
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+        border-bottom: 1px dashed $gray-light;
+      }
+    }
+
+    &__tab-content{
+      display: none;
+      &.active-tab {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
