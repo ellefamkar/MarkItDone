@@ -644,5 +644,11 @@ $mq-breakpoints: (
       height: auto;
       min-height: 450px;
 
+      &__content-img {
+          img {
+              display: block;
+              height: 335px;
+        }
+      }
   }
 }

@@ -120,13 +120,13 @@ const switchSlider = (pageNumber = 1) => {
   let slideNumber = document.querySelector(".js-slider__numbers");
   slideNumber.innerHTML = number;
 
-  let sliderContainer = document.querySelector(".js-slider__content ");
+  let sliderContainer = document.querySelector(".js-slider__content");
   sliderContainer.innerHTML = result;
 };
+
 switchSlider();
 
 let slider = 1;
-
 // previous button action
 const prevButton = () => {
   slider -= 1;
