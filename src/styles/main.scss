@@ -36,6 +36,7 @@
 @import "components/_hero.scss";
 @import "components/_navbar.scss";
 @import "components/_modal.scss";
+@import "components/_tab.scss";
 
 //----------------------------------*/
 @import "components/_section.scss";
@@ -126,19 +127,6 @@
     padding: 0.5rem 1rem;
     width: auto;
     max-width: 376px;
-  }
-}
-
-// MENU SECTION
-
-.menu-section {
-
-  &__container {
-    border-radius: $border-radius;
-    background-color: $gray-dark;
-    border: 1px solid $gray-light;
-    margin: 0rem auto;
-    padding: 6rem 2rem 3rem 2rem;
   }
 }
 
